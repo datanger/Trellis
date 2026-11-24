@@ -2,26 +2,57 @@
 
 **Grow with structure.** Eight stable entry skills, adaptive host-agent workflows, replaceable pinned capabilities and human control. [中文](README.md)
 
-## Install
+## Online installation
 
-Requires Git, Bash and Python 3.9+. Clone the repository, then run:
+No manual repository clone is needed. Requires Bash, curl, tar, Git and Python 3.9+ (Linux, macOS or WSL with these tools).
+
+**Codex**
 
 ```bash
-git clone https://github.com/datanger/Trellis.git
-cd Trellis
-./install.sh --host codex --scope user
-./install.sh --host claude --scope user
-# Or both:
-./install.sh --host both --scope user
-# Project scope:
-./install.sh --host both --scope project --target /path/to/project
+curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/main/install-online.sh | bash -s -- --host codex
 ```
 
-Codex uses `.agents/skills`; Claude Code uses `.claude/skills`, relative to home or project scope. Start a new session. Invoke `$trellis-init` in Codex or `/trellis-init` in Claude Code. Five pinned upstream checkouts are stored privately; native tools may need additional approved setup. No hooks are automatically installed.
+**Claude Code**
 
-## Upgrade from v0.1.0
+```bash
+curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/main/install-online.sh | bash -s -- --host claude
+```
 
-Pull the current code and reinstall with the original scope/host/target plus `--replace`. For legacy projects, preview `python3 trellis.py --project /path/to/project migrate-requirements` and apply with `--apply` only after review. The migration preserves legacy evidence and backs up the old state, refuses manually modified generated docs, and reports the highest legacy ID. New IDs must exceed that number. Review obsolete project rules and CI guard references; re-confirm important legacy approvals and acceptance using Git and actual tests. See the Chinese README for full migration notes.
+**Both hosts**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/main/install-online.sh | bash -s -- --host both
+```
+
+Defaults to the main branch and user scope. To pin a published [release](https://github.com/datanger/Trellis/releases):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/v0.2.1/install-online.sh | bash -s -- --host codex --version v0.2.1
+```
+
+**Project scope** (run in the project directory or specify its path):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/main/install-online.sh | bash -s -- --host both --scope project --target /path/to/project
+```
+
+Codex uses `.agents/skills`; Claude Code uses `.claude/skills`, relative to home or project scope. Start a new session. Invoke `$trellis-init` in Codex or `/trellis-init` in Claude Code. Five pinned upstream checkouts are stored privately in the versioned toolkit; native tools may need additional approved setup. No hooks are automatically installed. The downloaded temporary source archive is cleaned up. `--offline` is for wrapper development only; missing providers remain unavailable.
+
+To review before running, download the script with `curl -fsSL <script URL above> -o install-online.sh`, inspect it, then run `bash install-online.sh --host codex`. Developers with a source checkout can still run `./install.sh` directly.
+
+## Online upgrade
+
+Run the online installer again with the original host/scope/target and `--replace`:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/main/install-online.sh | bash -s -- --host both --replace
+```
+
+Only managed Trellis entries are replaced. Old toolkits are retained. Start a fresh host session.
+
+### Migrate v0.1.0 project requirements
+
+For legacy projects, preview `python3 ~/.trellis/toolkits/0.2.1/trellis.py --project /path/to/project migrate-requirements` and apply with `--apply` only after review (use the appropriate installed toolkit path for project scope). The migration preserves legacy evidence and backs up the old state, refuses manually modified generated docs, and reports the highest legacy ID. New IDs must exceed that number. Review obsolete project rules and CI guard references; re-confirm important legacy approvals and acceptance using Git and actual tests. See the Chinese README for full migration notes.
 
 ## Entries
 
@@ -41,3 +72,7 @@ Markdown requirements are directly editable; raw rows have only stable ID and de
 The host agent chooses minimal steps based on intent and risk. Major design/interface/skeleton decisions require explicit review; small reversible tasks do not run a full lifecycle. Real tests and Git/CI protect accepted behavior. There is no custom runtime cursor, approval token or receipt database.
 
 The registry retains all 136 previously registered upstream resources, 61 skill files and 91 capability families. Native execution parity remains subject to live host tests. Run `python3 trellis.py validate` and `python3 -m unittest discover -s tests -v`. See [dependencies](docs/DEPENDENCIES.md), [architecture](docs/architecture.md) and [host acceptance](docs/host-acceptance.md).
+
+## Publishing (maintainers)
+
+A push to main changing `VERSION` triggers the tested release workflow. Update `CHANGELOG.md` with the version. Manual workflow dispatch or `./publish.sh` from a clean checkout matching remote main is also supported (local use requires authenticated `gh`). Existing tags/releases are not overwritten.

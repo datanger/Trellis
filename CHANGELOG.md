@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.2.1 — Online installation
+
+- Add one-command online installation for Codex and Claude Code without manually cloning Trellis.
+- Support both hosts, user/project scope, exact release tags and explicit upgrades.
+- Add tested automatic GitHub Releases on main version bumps and manual workflow dispatch.
+- Pin CI runners to Ubuntu 22.04 for Python 3.9 compatibility; keep upstream locks and eight entry skills unchanged.
+- Local archive-install tests verify argument forwarding, version checking and failure handling. Live upstream downloads and host execution still require integration verification.
+
+
 ## v0.2.0 — Lightweight preview
 
 - Preserve eight entries and all 136 registered upstream resources; merge routing/coverage into one inventory and keep 58 non-mandatory task hints.

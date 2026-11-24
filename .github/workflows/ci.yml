@@ -4,8 +4,9 @@ permissions:
   contents: read
 jobs:
   runtime:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
+      fail-fast: false
       matrix:
         python-version: ['3.9', '3.11', '3.12']
     steps:
