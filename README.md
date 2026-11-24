@@ -33,7 +33,7 @@ curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/main/install-onlin
 默认使用 `main` 分支及用户级安装。需要固定发布版本时，使用对应 [Release](https://github.com/datanger/Trellis/releases) 的 Tag，例如：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/v0.2.1/install-online.sh | bash -s -- --host codex --version v0.2.1
+curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/v0.2.2/install-online.sh | bash -s -- --host codex --version v0.2.2
 ```
 
 **项目级安装**（在项目目录中运行，或显式指定 `--target`）：
@@ -56,17 +56,17 @@ curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/main/install-onlin
 
 此选项仅替换 Trellis 管理的入口，不覆盖其他 Skills。旧 toolkit 不会被自动删除。升级后开启新会话。
 
-### 从 v0.1.0 迁移项目需求
+### 迁移已有项目需求
 
-旧项目如果存在 `.trellis/state.json`，先在项目中停用旧工作流、保存 Git 修改，然后使用已安装的新版本 toolkit 执行（先预览，人工确认再 apply）。用户级安装示例，项目级安装则将路径替换为项目下的 `.trellis/toolkit/0.2.1/trellis.py`：
+已有表格、无序列表或 v0.1 状态文件的项目，先保存 Git 修改，然后使用已安装的新版本 toolkit 执行（先预览，人工确认再 apply）。用户级安装示例，项目级安装则将路径替换为项目下的 `.trellis/toolkit/0.2.2/trellis.py`：
 
 ```bash
-python3 ~/.trellis/toolkits/0.2.1/trellis.py --project /path/to/project migrate-requirements
-python3 ~/.trellis/toolkits/0.2.1/trellis.py --project /path/to/project migrate-requirements --apply
-python3 ~/.trellis/toolkits/0.2.1/trellis.py --project /path/to/project requirements-check
+python3 ~/.trellis/toolkits/0.2.2/trellis.py --project /path/to/project migrate-requirements
+python3 ~/.trellis/toolkits/0.2.2/trellis.py --project /path/to/project migrate-requirements --apply
+python3 ~/.trellis/toolkits/0.2.2/trellis.py --project /path/to/project requirements-check
 ```
 
-迁移拒绝覆盖已被手工修改的旧需求文档；先人工协调。它保留原 ID、历史状态及旧文件备份，省略未被功能需求引用的纯调用指令；被引用的历史无效项保留删除线并需要人工核对。第一次新增 ID 必须大于迁移报告的 `highest_legacy_id`。备份位于 `.trellis/v0.1-backup/`，历史审批、基线和测试证据不自动转换成新的有效审批。请通过现有设计文档、Git 和真实测试重新确认关键决策，移除 AGENTS.md/CLAUDE.md 中过时的逐步运行协议、旧 CI guard 调用（先审核，不自动修改）。新版本不再读写旧状态。
+迁移先预览，确认后才写入。原文档、旧状态及迁移报告保留在 `.trellis/requirements-list-backup/` 或 `.trellis/v0.1-backup/`。旧需求没有日期时采用迁移日期，并在报告中明确列出；待确认项不纳入正式列表，保留在报告中供人工确认。旧审批不自动生效；人工审查并更新旧 AGENTS.md/CLAUDE.md 规则。
 
 ## 八个入口
 
@@ -83,22 +83,65 @@ python3 ~/.trellis/toolkits/0.2.1/trellis.py --project /path/to/project requirem
 
 例如 `$trellis-audit 检查文档一致性` 与 `$trellis-audit 检查潜在 Bug` 选择不同能力；`$trellis-simpler 整理 README` 无需完整开发流程。审查默认只读，整理保持既有行为。用户无需记住内部能力名。
 
-## 原始需求
+## 需求文档
 
-Markdown 为唯一事实源，直接编辑；Git 追溯历史。纯 Skill 调用不是需求。新增编号递增，修改原行，删除加删除线，日期只保留最后编辑日期。
+两个文档均为可直接编辑的 Markdown 有序列表，只记录需求说明及最后编辑日期。删除使用删除线，Git 追溯历史，不使用表格或永久需求 ID。
 
-| 序号 | 需求描述 |
+原始需求：
+
+```markdown
+1. 将 AGENT.md 更名为 AGENTS.md。（2026-11-24）
+2. ~~每个模块独立创建测试说明。~~（2026-11-24）
+```
+
+需求拆解（每个分类从 1 开始）：
+
+```markdown
+## 技术设计
+
+1. 使用 Archify 生成架构图。（2026-11-24）
+2. 将 SVG 嵌入技术文档。（2026-11-24）
+
+## 测试验收
+
+1. 支持自动化回归测试。（2026-11-24）
+```
+
+AI 推导的功能需求经人工确认后纳入正式列表。详见 [规则](docs/requirements-rules.md)。
+
+## 使用方式
+
+用户只需要选择入口并用自然语言描述任务，不需要知道上游 Skill 名称。支持从任意阶段切入、复用已有需求/设计/接口，以及继承宿主原生 `/plan` 的计划。
+
+```text
+/trellis-contract 根据已有需求及技术方案设计接口文档
+/trellis-contract 根据已确认的接口创建代码骨架
+/trellis-contract 使用样例数据进行骨架联调
+/trellis-dev 执行刚刚生成的计划
+/trellis-dev 继续开发下一个模块
+/trellis-accept 验收当前模块
+```
+
+以上是 Claude Code 示例；Codex 使用 `$trellis-contract`、`$trellis-dev` 等。只执行当前请求的范围，不强制重新初始化或重复规划。对于复杂项目，按[渐进式开发规范](docs/progressive-development.md)衔接设计、接口、骨架、样例联调、逐模块实现及验收；简单任务直接执行和验证。
+
+### 内部 Skill 调用
+
+八个入口均有独立工作流说明，按用户任务选择具体上游子 Skill，并区分必需和条件调用。Agent 在相关操作之前读取真正的上游文件，而非仅参考能力名称。默认开发自动使用 Ponytail full，无需用户指定；已有 Plan 自动复用 Superpowers 的 executing-plans 方法，按需引入 TDD 和渐进式实现、代码审查，最终执行真实验证。
+
+| 入口 | 典型任务的主要子能力（按需选择） |
 |---|---|
-| R-0001 | 将 AGENT.md 更名为 AGENTS.md。（2026-11-24） |
-| R-0002 | ~~每个模块独立创建测试说明。~~（2026-11-24） |
+| [init](skills/trellis-init/workflows.md) | constitution、context-engineering、ci-cd-and-automation |
+| [requirements](skills/trellis-requirements/workflows.md) | specify、clarify、interview-me、checklist |
+| [design](skills/trellis-design/workflows.md) | plan、brainstorming、ponytail、archify |
+| [contract](skills/trellis-contract/workflows.md) | api-and-interface-design、ponytail、archify、test-driven-development |
+| [dev](skills/trellis-dev/workflows.md) | executing-plans、ponytail、incremental-implementation、test-driven-development、systematic-debugging、verification-before-completion |
+| [accept](skills/trellis-accept/workflows.md) | test-engineer、verification-before-completion、converge、shipping-and-launch |
+| [audit](skills/trellis-audit/workflows.md) | code-review-and-quality、ponytail-audit、ponytail-review、archify |
+| [simpler](skills/trellis-simpler/workflows.md) | ponytail、code-simplification、documentation-and-adrs、verification-before-completion |
 
-功能需求按业务分类，关联 R 编号，AI 推导待人工确认。详见 [规则](docs/requirements-rules.md)。
+五个锁定上游：Spec Kit、Superpowers、Ponytail、Archify、Agent Skills。保留原有 136 项资源、61 个 Skill 文件及 91 个能力族，具体工作流与能力清单互补；特殊能力通过 `catalog` 反查，重复能力仅选择主要方法。原生工具需要对应宿主和环境，不可用时明确报告。详见[依赖说明](docs/DEPENDENCIES.md)。
 
-## 运行方式
-
-入口识别意图 → 选择必要能力 → 宿主动态计划与执行 → 必要时人工审批 → 实际验证。轻量任务直接执行；复杂任务分阶段审查技术方案、接口、骨架及验收目标。保护已验收行为、公共契约和独立评测，不冻结全部代码文件。Git、实际测试和 CI 是证据；不再维护运行状态机、审批 Token 或测试凭证数据库。
-
-五个锁定上游：Spec Kit、Superpowers、Ponytail、Archify、Agent Skills。保留 v0.1 的 136 项资源、61 个 Skill 文件及 91 个去重能力族；58 项任务提示仅用于语义路由，不是固定工作流。实际原生能力需要对应工具和宿主支持；不可用时报告阻塞，不伪造执行。详细见 [依赖](docs/DEPENDENCIES.md)。
+Trellis 由宿主 Agent 解释执行，未引入自定义状态机、审批 Token 或测试凭证数据库。真实宿主执行效果需要独立验证；不会将结构化映射当作已经执行的证据。
 
 ## 可选工具
 

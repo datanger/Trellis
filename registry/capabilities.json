@@ -2517,6 +2517,24 @@
       "capabilities": [
         "band"
       ]
+    },
+    "dev.execute-plan": {
+      "entry": "dev",
+      "title": "Execute an accessible existing plan, including host-native plan",
+      "examples": [
+        "执行刚刚生成的计划",
+        "按已有Plan开发",
+        "continue existing plan",
+        "execute /plan output"
+      ],
+      "capabilities": [
+        "execute",
+        "simplify",
+        "tdd",
+        "incremental",
+        "review",
+        "verify"
+      ]
     }
   }
 }

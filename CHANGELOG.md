@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.2.2 — Task-specific Skill integration and numbered requirements
+
+- Raw and functional requirements use ordered Markdown lists with last-edit dates and strike-through deletion; functional numbering restarts per category.
+- Remove permanent requirement IDs and table metadata. Update templates, instructions, validation and reviewed legacy migration.
+- Preserve pending legacy items and old metadata in migration backups.
+- Add eight task-specific workflow documents with exact upstream child resource keys, required/conditional loading, scope boundaries and completion criteria. Preserve all 136 registered resources and 91 capability families via catalog fallback.
+- Reuse accessible native or existing plans; automatically apply Ponytail full before substantive coding, integrate Superpowers execution/TDD/verification and Agent Skills incremental implementation.
+- Document contract-first progressive module cycles and real host acceptance cases. No workflow state machine or duplicate plan management.
+
 ## v0.2.1 — Online installation
 
 - Add one-command online installation for Codex and Claude Code without manually cloning Trellis.

@@ -27,7 +27,7 @@ curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/main/install-onlin
 Defaults to the main branch and user scope. To pin a published [release](https://github.com/datanger/Trellis/releases):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/v0.2.1/install-online.sh | bash -s -- --host codex --version v0.2.1
+curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/v0.2.2/install-online.sh | bash -s -- --host codex --version v0.2.2
 ```
 
 **Project scope** (run in the project directory or specify its path):
@@ -50,9 +50,9 @@ curl -fsSL https://raw.githubusercontent.com/datanger/Trellis/main/install-onlin
 
 Only managed Trellis entries are replaced. Old toolkits are retained. Start a fresh host session.
 
-### Migrate v0.1.0 project requirements
+### Migrate existing requirements
 
-For legacy projects, preview `python3 ~/.trellis/toolkits/0.2.1/trellis.py --project /path/to/project migrate-requirements` and apply with `--apply` only after review (use the appropriate installed toolkit path for project scope). The migration preserves legacy evidence and backs up the old state, refuses manually modified generated docs, and reports the highest legacy ID. New IDs must exceed that number. Review obsolete project rules and CI guard references; re-confirm important legacy approvals and acceptance using Git and actual tests. See the Chinese README for full migration notes.
+Preview `python3 ~/.trellis/toolkits/0.2.2/trellis.py --project /path/to/project migrate-requirements` and apply with `--apply` after review. Supports legacy state, tables and bullet lists. Original documents and metadata are backed up; pending items remain in the migration report for review. Missing historical dates use the explicitly reported migration date. Review obsolete project instructions separately.
 
 ## Entries
 
@@ -67,11 +67,11 @@ For legacy projects, preview `python3 ~/.trellis/toolkits/0.2.1/trellis.py --pro
 | trellis-audit | Read-only bug, consistency, quality review |
 | trellis-simpler | Simplify code, docs, tests |
 
-Markdown requirements are directly editable; raw rows have only stable ID and description with last edit date. Strike out deleted descriptions. Use Git history. Never treat a bare invocation as a requirement.
+Both requirements documents use editable ordered Markdown lists (`1. Description (YYYY-MM-DD)`). Functional categories each restart at 1. No tables or permanent IDs. Strike out deleted descriptions; retain the last edit date. Discuss AI-derived proposals before adding them. Use Git history; skip bare invocations.
 
 The host agent chooses minimal steps based on intent and risk. Major design/interface/skeleton decisions require explicit review; small reversible tasks do not run a full lifecycle. Real tests and Git/CI protect accepted behavior. There is no custom runtime cursor, approval token or receipt database.
 
-The registry retains all 136 previously registered upstream resources, 61 skill files and 91 capability families. Native execution parity remains subject to live host tests. Run `python3 trellis.py validate` and `python3 -m unittest discover -s tests -v`. See [dependencies](docs/DEPENDENCIES.md), [architecture](docs/architecture.md) and [host acceptance](docs/host-acceptance.md).
+Each entry has a [task-specific workflow](skills/trellis-dev/workflows.md) specifying exact required and conditional upstream resource keys. Users never have to name the providers. In development, Ponytail full is the default before substantive coding, and an accessible existing native `/plan` is reused through applicable Superpowers executing-plans methods. See [progressive development](docs/progressive-development.md) for stage boundaries and module acceptance cycles. The catalog is the fallback for specialized capabilities. The registry retains all 136 previously registered upstream resources, 61 skill files and 91 capability families. Native execution parity remains subject to live host tests. Run `python3 trellis.py validate` and `python3 -m unittest discover -s tests -v`. See [dependencies](docs/DEPENDENCIES.md), [architecture](docs/architecture.md) and [host acceptance](docs/host-acceptance.md).
 
 ## Publishing (maintainers)
 

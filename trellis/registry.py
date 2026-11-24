@@ -30,8 +30,22 @@ def validate():
         if SOURCES.get(family['primary'],{}).get('capability')!=key or any(x not in SOURCES for x in family['complements']): errors.append('Invalid family '+key)
     for key,hint in HINTS.items():
         if hint['entry'] not in ENTRIES or any(x not in FAMILIES for x in hint['capabilities']): errors.append('Invalid hint '+key)
+    workflow_files = {}
+    for entry in ENTRIES:
+        path = ROOT/'skills'/('trellis-'+entry)/'workflows.md'
+        skill = path.with_name('SKILL.md')
+        if not path.is_file() or not skill.is_file():
+            errors.append('Missing workflow: '+entry)
+            continue
+        text = path.read_text(encoding='utf-8')
+        keys = set(re.findall(r'`((?:superpowers|spec-kit|ponytail|archify|agent-skills):[^`\s]+)`', text))
+        if not keys or not keys <= SOURCES.keys():
+            errors.append('Invalid workflow source keys: '+entry+' '+str(sorted(keys-SOURCES.keys())))
+        if '## Other registered capabilities' not in text or 'workflows.md' not in skill.read_text(encoding='utf-8'):
+            errors.append('Missing workflow entry/fallback: '+entry)
+        workflow_files[entry] = len(keys)
     if errors: raise TrellisError('\n'.join(errors))
-    return {'entries':len(ENTRIES),'providers':len(LOCK),'registered_resources':len(SOURCES),'skill_files':sum(len(v['skill_files']) for v in LOCK.values()),'capability_families':len(FAMILIES),'task_hints':len(HINTS),'unmapped_registered_resources':0,'note':'Structural mapping; live host execution not proven.'}
+    return {'entries':len(ENTRIES),'providers':len(LOCK),'registered_resources':len(SOURCES),'skill_files':sum(len(v['skill_files']) for v in LOCK.values()),'capability_families':len(FAMILIES),'task_hints':len(HINTS),'unmapped_registered_resources':0,'workflow_files':len(workflow_files),'note':'Structural mapping; live host execution not proven.'}
 
 
 def catalog(entry):
@@ -40,4 +54,4 @@ def catalog(entry):
     keys={v['capability'] for v in SOURCES.values() if v['entry']==entry}
     hints={k:v for k,v in HINTS.items() if v['entry']==entry}
     keys.update(c for h in hints.values() for c in h['capabilities'])
-    return {'entry':entry,'families':{k:{**FAMILIES[k],'resources':{s:{'summary':v['summary'],'mode':v['mode'],'disposition':v['disposition']} for s,v in SOURCES.items() if v['capability']==k}} for k in sorted(keys)},'task_hints':hints}
+    return {'entry':entry,'workflow':str(ROOT/'skills'/('trellis-'+entry)/'workflows.md'),'families':{k:{**FAMILIES[k],'resources':{s:{'summary':v['summary'],'mode':v['mode'],'disposition':v['disposition']} for s,v in SOURCES.items() if v['capability']==k}} for k in sorted(keys)},'task_hints':hints}

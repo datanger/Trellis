@@ -1,9 +1,33 @@
 # Requirements
 
-Use `docs/requirements/raw-requirements.md` and `docs/requirements/functional-requirements.md` (reuse an existing equivalent location after agreement). Both are canonical Markdown; user and agent may edit directly. Templates in `templates/` are optional starting points, never overwrite existing docs.
+Use `docs/requirements/raw-requirements.md` and `docs/requirements/functional-requirements.md` (reuse agreed equivalent locations). Both are canonical, directly editable Markdown. No tables, permanent requirement IDs, source/status/operation fields or compulsory raw-to-functional ID links. Numbers are ordinary Markdown list positions, not identifiers.
 
-Raw table: exactly two columns `序号` and `需求描述`. Use stable increasing R-0001 IDs (preserve existing ID width), with the last edit date `(YYYY-MM-DD)` after the description; Chinese parentheses also accepted. Add at end, modify in place, delete by wrapping only the description in `~~...~~`, restore by removing the strike. Update date on modification/deletion/restoration. Never reuse or renumber IDs. Preserve original words or faithful excerpts; do not invent requirements. Split only clearly independent requests, avoid duplicates. Escape pipes as `&#124;` or `\|`, line breaks as `<br>`. No source/status/operation/supersedes metadata columns. Do not record standalone `$trellis-init`, `/trellis-*`, temporary commands or questions. Use Git to track history. If a document reference matters, include it naturally in the description.
+Raw requirements:
 
-Functional table: grouped by business category, stable Fxx-xxx IDs, functionality, linked R IDs, acceptance criteria, status (待确认/已确认/已取消). AI-derived items explicitly marked 待确认（AI推导）. Confirm substantive changes with user, retain cancelled IDs. Never let a cancelled raw requirement silently authorize new work; check downstream implications. Keep only necessary acceptance detail; link a separate evaluator when useful. Use `requirements-check` optionally to catch malformed IDs, duplicate entries and missing links. Do not force user to use CLI for edits.
+```markdown
+# 原始需求
 
-For migrated projects, consult the retired state once when assigning the first new ID: use a number greater than every historical ID, including omitted command-only rows. Preserve the old backup until Git history and references are confirmed.
+1. 用户提出的需求。（2026-11-24）
+2. ~~已经删除的需求。~~（2026-11-24）
+```
+
+Functional requirements, grouped by actual business category:
+
+```markdown
+# 需求拆解
+
+## 数据解析
+
+1. 支持解析输入文件。（2026-11-24）
+2. ~~支持旧格式。~~（2026-11-24）
+
+## 测试验收
+
+1. 支持自动化回归测试。（2026-11-24）
+```
+
+Use `1.`, `2.`, `3.` in sequence, restart at 1 in each functional category. Each item is one concise requirement and its last edit date `(YYYY-MM-DD)` or Chinese parentheses. Add at the end of its list, modify the existing item in place, strike only the description when deleting (retain number and date), unstrike on restoration; update the date only for changed items. Do not physically delete retired requirements. Keep raw wording faithful; split clearly independent requirements. Do not record a bare skill invocation, `/plan`, question, temporary operation or invented requirement. Use Git history, not a separate requirements database. Categories are created as needed, not predefined.
+
+Keep functional behavior implementable and verifiable; discuss AI-derived proposals before adding them to the formal list. Preserve approved acceptance criteria in relevant design/test/acceptance artifacts rather than extra requirement columns; do not lose them during migration. Check downstream impact of changes and cancellations semantically. `requirements-check` optionally validates numbering, dates and deletion syntax; not a semantic approval test.
+
+For old state, tables or bullet lists, use `migrate-requirements` to preview, review and then `--apply`. It preserves source documents/metadata in a backup, reports undated items assigned the migration date, and retains pending legacy proposals and acceptance metadata for review. Unknown content or manually changed v0.1 generated views require manual reconciliation. No automatic migration or overwrite during install/bootstrap.
