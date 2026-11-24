@@ -1,26 +1,14 @@
 ---
 name: trellis-design
-description: "Design and compare architecture, algorithms and execution flows; plan before implementation. 技术架构、技术方案、技术流程、方案确认。"
+description: "Design and compare architecture, algorithms and execution flows; plan before implementation. 技术架构、技术方案、技术流程、方案确认"
 ---
 
 # trellis-design
 
 <!-- Trellis managed installation -->
 
-This is one of the **eight stable Trellis entry skills**, not a fixed pipeline. Interpret the user's natural-language request and compose only the relevant task routes. Trellis keeps the human in control of goals, approvals and acceptance; upstream skills are private implementation capabilities.
+Toolkit: `@TRELLIS_TOOLKIT@`; interpreter: `@TRELLIS_PYTHON@`. In source checkout use its root and Python 3.9+. Read project instructions and `docs/agent-protocol.md` in toolkit (relevant sections only).
 
-## Start
+Choose design, research, feasibility, comparison or visualization based on intent. Inspect current constraints, compare viable alternatives, prefer minimal reasonable architecture, use Archify when useful. For major changes present design before implementation; do not force unrelated contract or coding steps.
 
-1. Locate the actual project root and the installed toolkit at `@TRELLIS_TOOLKIT@`. Use the installation interpreter `@TRELLIS_PYTHON@` (or Python 3.9+ in a source checkout), with absolute toolkit paths; pass `--project <absolute-project-root>` before the subcommand. If this file is being read from a source checkout rather than an installation, use the checkout root (contains `VERSION`, `trellis.py`, `registry/`).
-2. **Read `docs/agent-protocol.md` in the toolkit in full.** It defines the authoritative execution, approval, requirement capture, provider adaptation, and evidence rules. Do not proceed if it is missing.
-3. Read applicable project `AGENTS.md` or `CLAUDE.md`, project requirements, current state and relevant approved design; run `catalog design` to list this entry's precise task routes. If useful run `status` and `guard`.
-4. Use the request, context and route descriptions to select one or more routes; call `compose design --route <route-id> ...` to inspect the resulting steps. For another entry's capability, explain the route change and obtain user agreement if it changes the intended operation. Never ask the user to memorize route IDs or upstream skill names.
-5. Capture any newly stated user requirements, regardless of the current entry. Start or resume the workflow and follow the shared protocol. Use the smallest appropriate route; never run every available provider by default.
-
-## Entry-specific behavior
-
-For important changes use host Plan mode if available; compare alternatives and explain real execution principles. Require approval of technical design before interface or skeleton work. Design may use isolated proof-of-concept work only if authorized; not production implementation.
-
-## User-facing output
-
-Use the user’s language. Show the current result, evidence, the exact decision needed (if any), and the next automatic action. Prefer a concise mechanism explanation with source paths and a real example over long progress narration. Never report unrun checks as passed.
+Route semantically from user input. When useful run `<python> <toolkit>/trellis.py catalog design`; examples are hints, not mandatory flows. Select applicable capability families and resolve their actual pinned resources with `deps resolve <key>`. Read selected upstream instructions and provider-specific notes only. Compose the smallest workflow in the host agent; no per-step CLI, state machine or approval token. Consider other entry capabilities internally if required. Record actual new/changed product requirements per `docs/requirements-rules.md`, never command-only input. Report results, evidence and necessary decision in user language.

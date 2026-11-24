@@ -1,0 +1,3 @@
+# Ponytail
+
+load selected pinned prompt (ordinary, diff review, repo audit, debt, gain, help). Trellis policy `lite/full/ultra/off` selects intensity; `off` disables simplification advice, not project quality or safety requirements. Set `the project simplification preference` only on explicit request. Avoid needless code, reuse, and preserve reasonable abstractions; code count is not a quality objective. Native Band/telemetry/import is host-specific, may contain private session data, and requires the supported native plugin and explicit permission. Do not activate session hooks or read/import histories unasked; if absent report blocked, not fabricated cost data. Author benchmarks are not local measurements.

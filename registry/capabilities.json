@@ -1,0 +1,2522 @@
+{
+  "entries": {
+    "init": [
+      "Initialize or adopt a project; configure docs, rules, skills, context, Git and CI.",
+      "初始化、接管、规范、技能管理、环境配置"
+    ],
+    "requirements": [
+      "Capture exact user requests, maintain functional requirements, clarify and trace changes.",
+      "原始需求、功能拆解、澄清、变更"
+    ],
+    "design": [
+      "Design and compare architecture, algorithms and execution flows; plan before implementation.",
+      "技术架构、技术方案、技术流程、方案确认"
+    ],
+    "contract": [
+      "Define interfaces and examples; build reviewed skeletons and test their integration.",
+      "接口、样例数据、代码骨架、骨架联调"
+    ],
+    "dev": [
+      "Implement approved work; debug, optimize and coordinate iterative development.",
+      "执行、开发、算法优化、前端、后端、修复"
+    ],
+    "accept": [
+      "Define acceptance, test, verify, baseline and prepare delivery.",
+      "验收、自动化测试、评测、基线、发布"
+    ],
+    "audit": [
+      "Read-only evidence-first inspection of bugs, consistency, quality and architecture.",
+      "审查、bug检查、文档一致性、安全、性能"
+    ],
+    "simpler": [
+      "Simplify code, docs and tests without changing approved behavior.",
+      "文档整理、代码整理、测试整理、复杂度治理"
+    ]
+  },
+  "families": {
+    "explore": {
+      "primary": "superpowers:skills/brainstorming/SKILL.md",
+      "complements": []
+    },
+    "skill-diagnosis": {
+      "primary": "superpowers:skills/diagnosing-superpowers/SKILL.md",
+      "complements": []
+    },
+    "parallel": {
+      "primary": "superpowers:skills/dispatching-parallel-agents/SKILL.md",
+      "complements": [
+        "agent-skills:references/orchestration-patterns.md"
+      ]
+    },
+    "execute": {
+      "primary": "superpowers:skills/executing-plans/SKILL.md",
+      "complements": []
+    },
+    "finish-branch": {
+      "primary": "superpowers:skills/finishing-a-development-branch/SKILL.md",
+      "complements": []
+    },
+    "review-feedback": {
+      "primary": "superpowers:skills/receiving-code-review/SKILL.md",
+      "complements": []
+    },
+    "review-dispatch": {
+      "primary": "superpowers:skills/requesting-code-review/SKILL.md",
+      "complements": []
+    },
+    "subagents": {
+      "primary": "superpowers:skills/subagent-driven-development/SKILL.md",
+      "complements": []
+    },
+    "debug": {
+      "primary": "superpowers:skills/systematic-debugging/SKILL.md",
+      "complements": [
+        "agent-skills:skills/debugging-and-error-recovery/SKILL.md"
+      ]
+    },
+    "tdd": {
+      "primary": "superpowers:skills/test-driven-development/SKILL.md",
+      "complements": [
+        "agent-skills:skills/test-driven-development/SKILL.md",
+        "agent-skills:references/testing-patterns.md"
+      ]
+    },
+    "isolation": {
+      "primary": "superpowers:skills/using-git-worktrees/SKILL.md",
+      "complements": []
+    },
+    "skill-routing": {
+      "primary": "superpowers:skills/using-superpowers/SKILL.md",
+      "complements": []
+    },
+    "verify": {
+      "primary": "superpowers:skills/verification-before-completion/SKILL.md",
+      "complements": [
+        "agent-skills:references/definition-of-done.md"
+      ]
+    },
+    "plan": {
+      "primary": "spec-kit:templates/commands/plan.md",
+      "complements": [
+        "superpowers:skills/writing-plans/SKILL.md",
+        "agent-skills:skills/planning-and-task-breakdown/SKILL.md"
+      ]
+    },
+    "skill-author": {
+      "primary": "superpowers:skills/writing-skills/SKILL.md",
+      "complements": []
+    },
+    "accessibility": {
+      "primary": "agent-skills:skills/accessibility-engineering/SKILL.md",
+      "complements": [
+        "agent-skills:agents/accessibility-auditor.md",
+        "agent-skills:references/accessibility-checklist.md"
+      ]
+    },
+    "interfaces": {
+      "primary": "agent-skills:skills/api-and-interface-design/SKILL.md",
+      "complements": []
+    },
+    "browser": {
+      "primary": "agent-skills:skills/browser-testing-with-devtools/SKILL.md",
+      "complements": []
+    },
+    "ci": {
+      "primary": "agent-skills:skills/ci-cd-and-automation/SKILL.md",
+      "complements": []
+    },
+    "review": {
+      "primary": "agent-skills:skills/code-review-and-quality/SKILL.md",
+      "complements": [
+        "superpowers:skills/requesting-code-review/SKILL.md",
+        "ponytail:skills/ponytail-review/SKILL.md",
+        "agent-skills:agents/code-reviewer.md"
+      ]
+    },
+    "simplify": {
+      "primary": "ponytail:skills/ponytail/SKILL.md",
+      "complements": [
+        "agent-skills:skills/code-simplification/SKILL.md"
+      ]
+    },
+    "constraints": {
+      "primary": "spec-kit:templates/commands/constitution.md",
+      "complements": []
+    },
+    "context": {
+      "primary": "agent-skills:skills/context-engineering/SKILL.md",
+      "complements": []
+    },
+    "migration": {
+      "primary": "agent-skills:skills/deprecation-and-migration/SKILL.md",
+      "complements": []
+    },
+    "docs": {
+      "primary": "agent-skills:skills/documentation-and-adrs/SKILL.md",
+      "complements": []
+    },
+    "doubt": {
+      "primary": "agent-skills:skills/doubt-driven-development/SKILL.md",
+      "complements": []
+    },
+    "frontend": {
+      "primary": "agent-skills:skills/frontend-ui-engineering/SKILL.md",
+      "complements": []
+    },
+    "git": {
+      "primary": "agent-skills:skills/git-workflow-and-versioning/SKILL.md",
+      "complements": []
+    },
+    "ideas": {
+      "primary": "agent-skills:skills/idea-refine/SKILL.md",
+      "complements": []
+    },
+    "incremental": {
+      "primary": "agent-skills:skills/incremental-implementation/SKILL.md",
+      "complements": []
+    },
+    "interview": {
+      "primary": "agent-skills:skills/interview-me/SKILL.md",
+      "complements": []
+    },
+    "observability": {
+      "primary": "agent-skills:skills/observability-and-instrumentation/SKILL.md",
+      "complements": []
+    },
+    "performance": {
+      "primary": "agent-skills:skills/performance-optimization/SKILL.md",
+      "complements": []
+    },
+    "security": {
+      "primary": "agent-skills:skills/security-and-hardening/SKILL.md",
+      "complements": [
+        "agent-skills:agents/security-auditor.md",
+        "agent-skills:references/security-checklist.md"
+      ]
+    },
+    "release": {
+      "primary": "agent-skills:skills/shipping-and-launch/SKILL.md",
+      "complements": []
+    },
+    "sources": {
+      "primary": "agent-skills:skills/source-driven-development/SKILL.md",
+      "complements": []
+    },
+    "specify": {
+      "primary": "spec-kit:templates/commands/specify.md",
+      "complements": []
+    },
+    "test-design": {
+      "primary": "agent-skills:agents/test-engineer.md",
+      "complements": []
+    },
+    "performance-audit": {
+      "primary": "agent-skills:agents/web-performance-auditor.md",
+      "complements": [
+        "agent-skills:agents/web-performance-auditor.md",
+        "agent-skills:references/performance-checklist.md"
+      ]
+    },
+    "observability-audit": {
+      "primary": "agent-skills:references/observability-checklist.md",
+      "complements": []
+    },
+    "clarify": {
+      "primary": "spec-kit:templates/commands/clarify.md",
+      "complements": []
+    },
+    "req-check": {
+      "primary": "spec-kit:templates/commands/checklist.md",
+      "complements": []
+    },
+    "tasks": {
+      "primary": "spec-kit:templates/commands/tasks.md",
+      "complements": []
+    },
+    "spec-audit": {
+      "primary": "spec-kit:templates/commands/analyze.md",
+      "complements": []
+    },
+    "converge": {
+      "primary": "spec-kit:templates/commands/converge.md",
+      "complements": []
+    },
+    "bug-assess": {
+      "primary": "spec-kit:extensions/bug/commands/speckit.bug.assess.md",
+      "complements": []
+    },
+    "bug-test": {
+      "primary": "spec-kit:extensions/bug/commands/speckit.bug.test.md",
+      "complements": []
+    },
+    "idea-intake": {
+      "primary": "spec-kit:extensions/assess/commands/speckit.assess.intake.md",
+      "complements": []
+    },
+    "idea-research": {
+      "primary": "spec-kit:extensions/assess/commands/speckit.assess.research.md",
+      "complements": []
+    },
+    "problem-define": {
+      "primary": "spec-kit:extensions/assess/commands/speckit.assess.define.md",
+      "complements": []
+    },
+    "idea-shape": {
+      "primary": "spec-kit:extensions/assess/commands/speckit.assess.shape.md",
+      "complements": []
+    },
+    "idea-decide": {
+      "primary": "spec-kit:extensions/assess/commands/speckit.assess.decide.md",
+      "complements": []
+    },
+    "extension-admin": {
+      "primary": "spec-kit:docs/extensions/cli.md",
+      "complements": []
+    },
+    "preset-admin": {
+      "primary": "spec-kit:docs/presets/cli.md",
+      "complements": []
+    },
+    "bundle-admin": {
+      "primary": "spec-kit:docs/bundles/cli.md",
+      "complements": []
+    },
+    "workflow-admin": {
+      "primary": "spec-kit:docs/workflows/cli.md",
+      "complements": []
+    },
+    "step-admin": {
+      "primary": "spec-kit:docs/workflow-steps/cli.md",
+      "complements": []
+    },
+    "spec-native": {
+      "primary": "spec-kit:docs/installation.md",
+      "complements": []
+    },
+    "community-extension": {
+      "primary": "spec-kit:.github/skills/add-community-extension/SKILL.md",
+      "complements": []
+    },
+    "spec-maintainer-review": {
+      "primary": "spec-kit:.github/skills/code-review/SKILL.md",
+      "complements": []
+    },
+    "repo-audit": {
+      "primary": "ponytail:skills/ponytail-audit/SKILL.md",
+      "complements": []
+    },
+    "debt": {
+      "primary": "ponytail:skills/ponytail-debt/SKILL.md",
+      "complements": []
+    },
+    "gain": {
+      "primary": "ponytail:skills/ponytail-gain/SKILL.md",
+      "complements": []
+    },
+    "help": {
+      "primary": "ponytail:skills/ponytail-help/SKILL.md",
+      "complements": []
+    },
+    "band": {
+      "primary": "ponytail:README.md",
+      "complements": []
+    },
+    "visualize": {
+      "primary": "archify:archify/SKILL.md",
+      "complements": []
+    },
+    "pr-visualize": {
+      "primary": "archify:archify-pr/SKILL.md",
+      "complements": []
+    },
+    "archify-review": {
+      "primary": "archify:.agents/skills/archify-review/SKILL.md",
+      "complements": []
+    },
+    "archify-tuning": {
+      "primary": "archify:.agents/skills/archify-tuning/SKILL.md",
+      "complements": []
+    },
+    "archify-simplify": {
+      "primary": "archify:.agents/skills/simplify-codebase/SKILL.md",
+      "complements": []
+    },
+    "archify-test-value": {
+      "primary": "archify:.agents/skills/test-value/SKILL.md",
+      "complements": []
+    },
+    "architecture-diagnosis": {
+      "primary": "archify:archify/references/repository-authoring.md",
+      "complements": []
+    },
+    "diagram-delivery": {
+      "primary": "archify:archify/references/delivery-contract.md",
+      "complements": []
+    },
+    "story": {
+      "primary": "archify:archify/references/story-authoring.md",
+      "complements": []
+    },
+    "explainer": {
+      "primary": "archify:archify/references/explainer-authoring.md",
+      "complements": []
+    },
+    "diagram-repair": {
+      "primary": "archify:archify/references/architecture-layout-repair.md",
+      "complements": []
+    },
+    "diagram-brand": {
+      "primary": "archify:archify/references/brand-marks.md",
+      "complements": []
+    },
+    "archify-update": {
+      "primary": "archify:archify/references/update-awareness.md",
+      "complements": []
+    },
+    "diagram-runtime": {
+      "primary": "archify:archify/references/viewer-runtime.md",
+      "complements": []
+    },
+    "integration-admin": {
+      "primary": "spec-kit:docs/integrations/cli.md",
+      "complements": []
+    },
+    "integration-catalog": {
+      "primary": "spec-kit:docs/integrations/catalog.md",
+      "complements": []
+    },
+    "workflow-overlays": {
+      "primary": "spec-kit:docs/workflows/overlays.md",
+      "complements": []
+    },
+    "workflow-functions": {
+      "primary": "spec-kit:docs/workflows/functions.md",
+      "complements": []
+    },
+    "extensions-catalog": {
+      "primary": "spec-kit:docs/extensions/catalogs.md",
+      "complements": []
+    },
+    "presets-catalog": {
+      "primary": "spec-kit:docs/presets/catalogs.md",
+      "complements": []
+    },
+    "bundles-catalog": {
+      "primary": "spec-kit:docs/bundles/catalogs.md",
+      "complements": []
+    },
+    "workflows-catalog": {
+      "primary": "spec-kit:docs/workflows/catalogs.md",
+      "complements": []
+    },
+    "steps-catalog": {
+      "primary": "spec-kit:docs/workflow-steps/catalogs.md",
+      "complements": []
+    },
+    "native-artifacts": {
+      "primary": "spec-kit:src/specify_cli/artifacts/_commands.py",
+      "complements": []
+    },
+    "native-events": {
+      "primary": "spec-kit:src/specify_cli/events/command_run.py",
+      "complements": []
+    },
+    "native-mcp": {
+      "primary": "spec-kit:src/specify_cli/command_mcp.py",
+      "complements": []
+    }
+  },
+  "sources": {
+    "superpowers:skills/brainstorming/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/brainstorming/SKILL.md",
+      "entry": "design",
+      "capability": "explore",
+      "summary": "Explore intent, alternatives and design before coding",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/brainstorming/SKILL.md"
+    },
+    "superpowers:skills/diagnosing-superpowers/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/diagnosing-superpowers/SKILL.md",
+      "entry": "audit",
+      "capability": "skill-diagnosis",
+      "summary": "Inspect skill/session execution with evidence",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/diagnosing-superpowers/SKILL.md"
+    },
+    "superpowers:skills/dispatching-parallel-agents/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/dispatching-parallel-agents/SKILL.md",
+      "entry": "dev",
+      "capability": "parallel",
+      "summary": "Dispatch independent work; isolate conflicts",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/dispatching-parallel-agents/SKILL.md"
+    },
+    "superpowers:skills/executing-plans/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/executing-plans/SKILL.md",
+      "entry": "dev",
+      "capability": "execute",
+      "summary": "Execute an approved plan in checkpoints",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/executing-plans/SKILL.md"
+    },
+    "superpowers:skills/finishing-a-development-branch/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/finishing-a-development-branch/SKILL.md",
+      "entry": "accept",
+      "capability": "finish-branch",
+      "summary": "Verify and present branch disposition choices",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/finishing-a-development-branch/SKILL.md"
+    },
+    "superpowers:skills/receiving-code-review/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/receiving-code-review/SKILL.md",
+      "entry": "dev",
+      "capability": "review-feedback",
+      "summary": "Evaluate review comments before fixing",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/receiving-code-review/SKILL.md"
+    },
+    "superpowers:skills/requesting-code-review/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/requesting-code-review/SKILL.md",
+      "entry": "audit",
+      "capability": "review-dispatch",
+      "summary": "Request independent review with scope/evidence",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/requesting-code-review/SKILL.md"
+    },
+    "superpowers:skills/subagent-driven-development/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/subagent-driven-development/SKILL.md",
+      "entry": "dev",
+      "capability": "subagents",
+      "summary": "Implement isolated tasks with independent reviews",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/subagent-driven-development/SKILL.md"
+    },
+    "superpowers:skills/systematic-debugging/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/systematic-debugging/SKILL.md",
+      "entry": "dev",
+      "capability": "debug",
+      "summary": "Reproduce, localize, hypothesize, fix and guard",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/systematic-debugging/SKILL.md"
+    },
+    "superpowers:skills/test-driven-development/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/test-driven-development/SKILL.md",
+      "entry": "dev",
+      "capability": "tdd",
+      "summary": "Red, green, refactor",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/test-driven-development/SKILL.md"
+    },
+    "superpowers:skills/using-git-worktrees/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/using-git-worktrees/SKILL.md",
+      "entry": "dev",
+      "capability": "isolation",
+      "summary": "Create an isolated worktree only when requested/needed",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/using-git-worktrees/SKILL.md"
+    },
+    "superpowers:skills/using-superpowers/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/using-superpowers/SKILL.md",
+      "entry": "init",
+      "capability": "skill-routing",
+      "summary": "Discover relevant skills and precedence; no global injection",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/using-superpowers/SKILL.md"
+    },
+    "superpowers:skills/verification-before-completion/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/verification-before-completion/SKILL.md",
+      "entry": "accept",
+      "capability": "verify",
+      "summary": "Execute proof before claiming completion",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/verification-before-completion/SKILL.md"
+    },
+    "superpowers:skills/writing-plans/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/writing-plans/SKILL.md",
+      "entry": "design",
+      "capability": "plan",
+      "summary": "Write implementable tasks with explicit verification",
+      "mode": "instructions",
+      "disposition": "complement",
+      "primary": "spec-kit:templates/commands/plan.md"
+    },
+    "superpowers:skills/writing-skills/SKILL.md": {
+      "provider": "superpowers",
+      "path": "skills/writing-skills/SKILL.md",
+      "entry": "init",
+      "capability": "skill-author",
+      "summary": "Create and test skills",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "superpowers:skills/writing-skills/SKILL.md"
+    },
+    "agent-skills:skills/accessibility-engineering/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/accessibility-engineering/SKILL.md",
+      "entry": "audit",
+      "capability": "accessibility",
+      "summary": "Accessibility audit and remediation",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/accessibility-engineering/SKILL.md"
+    },
+    "agent-skills:skills/api-and-interface-design/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/api-and-interface-design/SKILL.md",
+      "entry": "contract",
+      "capability": "interfaces",
+      "summary": "Contract-first APIs, types and error semantics",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/api-and-interface-design/SKILL.md"
+    },
+    "agent-skills:skills/browser-testing-with-devtools/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/browser-testing-with-devtools/SKILL.md",
+      "entry": "accept",
+      "capability": "browser",
+      "summary": "Real browser DOM, console, network and profiling",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/browser-testing-with-devtools/SKILL.md"
+    },
+    "agent-skills:skills/ci-cd-and-automation/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/ci-cd-and-automation/SKILL.md",
+      "entry": "init",
+      "capability": "ci",
+      "summary": "CI gates and automation",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/ci-cd-and-automation/SKILL.md"
+    },
+    "agent-skills:skills/code-review-and-quality/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/code-review-and-quality/SKILL.md",
+      "entry": "audit",
+      "capability": "review",
+      "summary": "Multi-axis quality review",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/code-review-and-quality/SKILL.md"
+    },
+    "agent-skills:skills/code-simplification/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/code-simplification/SKILL.md",
+      "entry": "simpler",
+      "capability": "simplify",
+      "summary": "Preserve behavior while reducing complexity",
+      "mode": "instructions",
+      "disposition": "complement",
+      "primary": "ponytail:skills/ponytail/SKILL.md"
+    },
+    "agent-skills:skills/constraint-driven-development/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/constraint-driven-development/SKILL.md",
+      "entry": "init",
+      "capability": "constraints",
+      "summary": "Define and enforce quality constraints",
+      "mode": "instructions",
+      "disposition": "merged",
+      "primary": "spec-kit:templates/commands/constitution.md"
+    },
+    "agent-skills:skills/context-engineering/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/context-engineering/SKILL.md",
+      "entry": "init",
+      "capability": "context",
+      "summary": "Context packing and rules management",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/context-engineering/SKILL.md"
+    },
+    "agent-skills:skills/debugging-and-error-recovery/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/debugging-and-error-recovery/SKILL.md",
+      "entry": "dev",
+      "capability": "debug",
+      "summary": "Triage, recovery, guard and fallback",
+      "mode": "instructions",
+      "disposition": "complement",
+      "primary": "superpowers:skills/systematic-debugging/SKILL.md"
+    },
+    "agent-skills:skills/deprecation-and-migration/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/deprecation-and-migration/SKILL.md",
+      "entry": "simpler",
+      "capability": "migration",
+      "summary": "Safe deprecation, migration and cleanup",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/deprecation-and-migration/SKILL.md"
+    },
+    "agent-skills:skills/documentation-and-adrs/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/documentation-and-adrs/SKILL.md",
+      "entry": "simpler",
+      "capability": "docs",
+      "summary": "Maintain explanation, API docs and decisions",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/documentation-and-adrs/SKILL.md"
+    },
+    "agent-skills:skills/doubt-driven-development/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/doubt-driven-development/SKILL.md",
+      "entry": "audit",
+      "capability": "doubt",
+      "summary": "Adversarial independent review",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/doubt-driven-development/SKILL.md"
+    },
+    "agent-skills:skills/frontend-ui-engineering/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/frontend-ui-engineering/SKILL.md",
+      "entry": "dev",
+      "capability": "frontend",
+      "summary": "Component design, responsive UI and state",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/frontend-ui-engineering/SKILL.md"
+    },
+    "agent-skills:skills/git-workflow-and-versioning/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/git-workflow-and-versioning/SKILL.md",
+      "entry": "init",
+      "capability": "git",
+      "summary": "Atomic commits, versioning, safe Git",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/git-workflow-and-versioning/SKILL.md"
+    },
+    "agent-skills:skills/idea-refine/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/idea-refine/SKILL.md",
+      "entry": "requirements",
+      "capability": "ideas",
+      "summary": "Refine and converge ideas",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/idea-refine/SKILL.md"
+    },
+    "agent-skills:skills/incremental-implementation/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/incremental-implementation/SKILL.md",
+      "entry": "dev",
+      "capability": "incremental",
+      "summary": "Small, testable, rollback-friendly slices",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/incremental-implementation/SKILL.md"
+    },
+    "agent-skills:skills/interview-me/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/interview-me/SKILL.md",
+      "entry": "requirements",
+      "capability": "interview",
+      "summary": "Interview one question at a time",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/interview-me/SKILL.md"
+    },
+    "agent-skills:skills/observability-and-instrumentation/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/observability-and-instrumentation/SKILL.md",
+      "entry": "design",
+      "capability": "observability",
+      "summary": "Logging, tracing, monitoring and alerts",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/observability-and-instrumentation/SKILL.md"
+    },
+    "agent-skills:skills/performance-optimization/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/performance-optimization/SKILL.md",
+      "entry": "dev",
+      "capability": "performance",
+      "summary": "Measure first, profile and verify improvements",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/performance-optimization/SKILL.md"
+    },
+    "agent-skills:skills/planning-and-task-breakdown/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/planning-and-task-breakdown/SKILL.md",
+      "entry": "design",
+      "capability": "plan",
+      "summary": "Small tasks, dependencies and acceptance",
+      "mode": "instructions",
+      "disposition": "complement",
+      "primary": "spec-kit:templates/commands/plan.md"
+    },
+    "agent-skills:skills/security-and-hardening/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/security-and-hardening/SKILL.md",
+      "entry": "audit",
+      "capability": "security",
+      "summary": "Security review and hardening",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/security-and-hardening/SKILL.md"
+    },
+    "agent-skills:skills/shipping-and-launch/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/shipping-and-launch/SKILL.md",
+      "entry": "accept",
+      "capability": "release",
+      "summary": "Rollout, rollback, pre-launch gates and monitoring",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/shipping-and-launch/SKILL.md"
+    },
+    "agent-skills:skills/source-driven-development/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/source-driven-development/SKILL.md",
+      "entry": "design",
+      "capability": "sources",
+      "summary": "Verify framework decisions against authoritative sources",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "agent-skills:skills/source-driven-development/SKILL.md"
+    },
+    "agent-skills:skills/spec-driven-development/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/spec-driven-development/SKILL.md",
+      "entry": "requirements",
+      "capability": "specify",
+      "summary": "Specification-driven development",
+      "mode": "instructions",
+      "disposition": "merged",
+      "primary": "spec-kit:templates/commands/specify.md"
+    },
+    "agent-skills:skills/test-driven-development/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/test-driven-development/SKILL.md",
+      "entry": "dev",
+      "capability": "tdd",
+      "summary": "TDD plus test pyramid, test sizes and organization",
+      "mode": "instructions",
+      "disposition": "complement",
+      "primary": "superpowers:skills/test-driven-development/SKILL.md"
+    },
+    "agent-skills:skills/using-agent-skills/SKILL.md": {
+      "provider": "agent-skills",
+      "path": "skills/using-agent-skills/SKILL.md",
+      "entry": "init",
+      "capability": "skill-routing",
+      "summary": "Select relevant skills, shared operating rules",
+      "mode": "instructions",
+      "disposition": "merged",
+      "primary": "superpowers:skills/using-superpowers/SKILL.md"
+    },
+    "agent-skills:agents/code-reviewer.md": {
+      "provider": "agent-skills",
+      "path": "agents/code-reviewer.md",
+      "entry": "audit",
+      "capability": "review",
+      "summary": "Independent code review persona",
+      "mode": "persona",
+      "disposition": "complement",
+      "primary": "agent-skills:skills/code-review-and-quality/SKILL.md"
+    },
+    "agent-skills:agents/test-engineer.md": {
+      "provider": "agent-skills",
+      "path": "agents/test-engineer.md",
+      "entry": "accept",
+      "capability": "test-design",
+      "summary": "Specialist testing strategy and coverage",
+      "mode": "persona",
+      "disposition": "primary",
+      "primary": "agent-skills:agents/test-engineer.md"
+    },
+    "agent-skills:agents/security-auditor.md": {
+      "provider": "agent-skills",
+      "path": "agents/security-auditor.md",
+      "entry": "audit",
+      "capability": "security",
+      "summary": "Independent security review persona",
+      "mode": "persona",
+      "disposition": "complement",
+      "primary": "agent-skills:skills/security-and-hardening/SKILL.md"
+    },
+    "agent-skills:agents/web-performance-auditor.md": {
+      "provider": "agent-skills",
+      "path": "agents/web-performance-auditor.md",
+      "entry": "audit",
+      "capability": "performance-audit",
+      "summary": "Web performance quick/deep assessment",
+      "mode": "persona",
+      "disposition": "primary",
+      "primary": "agent-skills:agents/web-performance-auditor.md"
+    },
+    "agent-skills:agents/accessibility-auditor.md": {
+      "provider": "agent-skills",
+      "path": "agents/accessibility-auditor.md",
+      "entry": "audit",
+      "capability": "accessibility",
+      "summary": "Accessibility specialist review",
+      "mode": "persona",
+      "disposition": "complement",
+      "primary": "agent-skills:skills/accessibility-engineering/SKILL.md"
+    },
+    "agent-skills:references/definition-of-done.md": {
+      "provider": "agent-skills",
+      "path": "references/definition-of-done.md",
+      "entry": "accept",
+      "capability": "verify",
+      "summary": "Standing quality floor",
+      "mode": "reference",
+      "disposition": "complement",
+      "primary": "superpowers:skills/verification-before-completion/SKILL.md"
+    },
+    "agent-skills:references/testing-patterns.md": {
+      "provider": "agent-skills",
+      "path": "references/testing-patterns.md",
+      "entry": "accept",
+      "capability": "test-design",
+      "summary": "Test patterns and pitfalls",
+      "mode": "reference",
+      "disposition": "merged",
+      "primary": "agent-skills:agents/test-engineer.md"
+    },
+    "agent-skills:references/security-checklist.md": {
+      "provider": "agent-skills",
+      "path": "references/security-checklist.md",
+      "entry": "audit",
+      "capability": "security",
+      "summary": "Security checklist",
+      "mode": "reference",
+      "disposition": "complement",
+      "primary": "agent-skills:skills/security-and-hardening/SKILL.md"
+    },
+    "agent-skills:references/performance-checklist.md": {
+      "provider": "agent-skills",
+      "path": "references/performance-checklist.md",
+      "entry": "audit",
+      "capability": "performance-audit",
+      "summary": "Performance checklist",
+      "mode": "reference",
+      "disposition": "complement",
+      "primary": "agent-skills:agents/web-performance-auditor.md"
+    },
+    "agent-skills:references/accessibility-checklist.md": {
+      "provider": "agent-skills",
+      "path": "references/accessibility-checklist.md",
+      "entry": "audit",
+      "capability": "accessibility",
+      "summary": "Accessibility checklist",
+      "mode": "reference",
+      "disposition": "complement",
+      "primary": "agent-skills:skills/accessibility-engineering/SKILL.md"
+    },
+    "agent-skills:references/observability-checklist.md": {
+      "provider": "agent-skills",
+      "path": "references/observability-checklist.md",
+      "entry": "audit",
+      "capability": "observability-audit",
+      "summary": "Monitoring checklist",
+      "mode": "reference",
+      "disposition": "primary",
+      "primary": "agent-skills:references/observability-checklist.md"
+    },
+    "agent-skills:references/orchestration-patterns.md": {
+      "provider": "agent-skills",
+      "path": "references/orchestration-patterns.md",
+      "entry": "dev",
+      "capability": "parallel",
+      "summary": "Multi-persona orchestration rules",
+      "mode": "reference",
+      "disposition": "complement",
+      "primary": "superpowers:skills/dispatching-parallel-agents/SKILL.md"
+    },
+    "agent-skills:commands/spec.toml": {
+      "provider": "agent-skills",
+      "path": "commands/spec.toml",
+      "entry": "requirements",
+      "capability": "specify",
+      "summary": "Specification command",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "spec-kit:templates/commands/specify.md"
+    },
+    "agent-skills:commands/planning.toml": {
+      "provider": "agent-skills",
+      "path": "commands/planning.toml",
+      "entry": "design",
+      "capability": "plan",
+      "summary": "Planning command",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "spec-kit:templates/commands/plan.md"
+    },
+    "agent-skills:commands/build.toml": {
+      "provider": "agent-skills",
+      "path": "commands/build.toml",
+      "entry": "dev",
+      "capability": "execute",
+      "summary": "Implementation command incl. auto mode",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "superpowers:skills/executing-plans/SKILL.md"
+    },
+    "agent-skills:commands/test.toml": {
+      "provider": "agent-skills",
+      "path": "commands/test.toml",
+      "entry": "accept",
+      "capability": "verify",
+      "summary": "Test command",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "superpowers:skills/verification-before-completion/SKILL.md"
+    },
+    "agent-skills:commands/constraints.toml": {
+      "provider": "agent-skills",
+      "path": "commands/constraints.toml",
+      "entry": "init",
+      "capability": "constraints",
+      "summary": "Project quality floor",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "spec-kit:templates/commands/constitution.md"
+    },
+    "agent-skills:commands/review.toml": {
+      "provider": "agent-skills",
+      "path": "commands/review.toml",
+      "entry": "audit",
+      "capability": "review",
+      "summary": "Review command",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "agent-skills:skills/code-review-and-quality/SKILL.md"
+    },
+    "agent-skills:commands/webperf.toml": {
+      "provider": "agent-skills",
+      "path": "commands/webperf.toml",
+      "entry": "audit",
+      "capability": "performance-audit",
+      "summary": "Web performance audit",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "agent-skills:agents/web-performance-auditor.md"
+    },
+    "agent-skills:commands/a11y.toml": {
+      "provider": "agent-skills",
+      "path": "commands/a11y.toml",
+      "entry": "audit",
+      "capability": "accessibility",
+      "summary": "Accessibility audit",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "agent-skills:skills/accessibility-engineering/SKILL.md"
+    },
+    "agent-skills:commands/code-simplify.toml": {
+      "provider": "agent-skills",
+      "path": "commands/code-simplify.toml",
+      "entry": "simpler",
+      "capability": "simplify",
+      "summary": "Code simplification command",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "ponytail:skills/ponytail/SKILL.md"
+    },
+    "agent-skills:commands/ship.toml": {
+      "provider": "agent-skills",
+      "path": "commands/ship.toml",
+      "entry": "accept",
+      "capability": "release",
+      "summary": "Release command",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "agent-skills:skills/shipping-and-launch/SKILL.md"
+    },
+    "spec-kit:templates/commands/constitution.md": {
+      "provider": "spec-kit",
+      "path": "templates/commands/constitution.md",
+      "entry": "init",
+      "capability": "constraints",
+      "summary": "Project principles",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:templates/commands/constitution.md"
+    },
+    "spec-kit:templates/commands/specify.md": {
+      "provider": "spec-kit",
+      "path": "templates/commands/specify.md",
+      "entry": "requirements",
+      "capability": "specify",
+      "summary": "Create/update feature spec",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:templates/commands/specify.md"
+    },
+    "spec-kit:templates/commands/clarify.md": {
+      "provider": "spec-kit",
+      "path": "templates/commands/clarify.md",
+      "entry": "requirements",
+      "capability": "clarify",
+      "summary": "Resolve ambiguities",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:templates/commands/clarify.md"
+    },
+    "spec-kit:templates/commands/checklist.md": {
+      "provider": "spec-kit",
+      "path": "templates/commands/checklist.md",
+      "entry": "requirements",
+      "capability": "req-check",
+      "summary": "Requirements quality checklist",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:templates/commands/checklist.md"
+    },
+    "spec-kit:templates/commands/plan.md": {
+      "provider": "spec-kit",
+      "path": "templates/commands/plan.md",
+      "entry": "design",
+      "capability": "plan",
+      "summary": "Implementation planning and technical design",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:templates/commands/plan.md"
+    },
+    "spec-kit:templates/commands/tasks.md": {
+      "provider": "spec-kit",
+      "path": "templates/commands/tasks.md",
+      "entry": "design",
+      "capability": "tasks",
+      "summary": "Dependency-ordered tasks",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:templates/commands/tasks.md"
+    },
+    "spec-kit:templates/commands/analyze.md": {
+      "provider": "spec-kit",
+      "path": "templates/commands/analyze.md",
+      "entry": "audit",
+      "capability": "spec-audit",
+      "summary": "Spec, plan and task consistency",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:templates/commands/analyze.md"
+    },
+    "spec-kit:templates/commands/implement.md": {
+      "provider": "spec-kit",
+      "path": "templates/commands/implement.md",
+      "entry": "dev",
+      "capability": "execute",
+      "summary": "Implement approved tasks",
+      "mode": "spec-template",
+      "disposition": "merged",
+      "primary": "superpowers:skills/executing-plans/SKILL.md"
+    },
+    "spec-kit:templates/commands/converge.md": {
+      "provider": "spec-kit",
+      "path": "templates/commands/converge.md",
+      "entry": "accept",
+      "capability": "converge",
+      "summary": "Reconcile actual implementation and spec",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:templates/commands/converge.md"
+    },
+    "spec-kit:extensions/bug/commands/speckit.bug.assess.md": {
+      "provider": "spec-kit",
+      "path": "extensions/bug/commands/speckit.bug.assess.md",
+      "entry": "audit",
+      "capability": "bug-assess",
+      "summary": "bug assess workflow",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:extensions/bug/commands/speckit.bug.assess.md"
+    },
+    "spec-kit:extensions/bug/commands/speckit.bug.fix.md": {
+      "provider": "spec-kit",
+      "path": "extensions/bug/commands/speckit.bug.fix.md",
+      "entry": "dev",
+      "capability": "debug",
+      "summary": "bug fix workflow",
+      "mode": "spec-template",
+      "disposition": "merged",
+      "primary": "superpowers:skills/systematic-debugging/SKILL.md"
+    },
+    "spec-kit:extensions/bug/commands/speckit.bug.test.md": {
+      "provider": "spec-kit",
+      "path": "extensions/bug/commands/speckit.bug.test.md",
+      "entry": "accept",
+      "capability": "bug-test",
+      "summary": "bug test workflow",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:extensions/bug/commands/speckit.bug.test.md"
+    },
+    "spec-kit:extensions/assess/commands/speckit.assess.intake.md": {
+      "provider": "spec-kit",
+      "path": "extensions/assess/commands/speckit.assess.intake.md",
+      "entry": "requirements",
+      "capability": "idea-intake",
+      "summary": "assess intake workflow",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:extensions/assess/commands/speckit.assess.intake.md"
+    },
+    "spec-kit:extensions/assess/commands/speckit.assess.research.md": {
+      "provider": "spec-kit",
+      "path": "extensions/assess/commands/speckit.assess.research.md",
+      "entry": "design",
+      "capability": "idea-research",
+      "summary": "assess research workflow",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:extensions/assess/commands/speckit.assess.research.md"
+    },
+    "spec-kit:extensions/assess/commands/speckit.assess.define.md": {
+      "provider": "spec-kit",
+      "path": "extensions/assess/commands/speckit.assess.define.md",
+      "entry": "requirements",
+      "capability": "problem-define",
+      "summary": "assess define workflow",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:extensions/assess/commands/speckit.assess.define.md"
+    },
+    "spec-kit:extensions/assess/commands/speckit.assess.shape.md": {
+      "provider": "spec-kit",
+      "path": "extensions/assess/commands/speckit.assess.shape.md",
+      "entry": "design",
+      "capability": "idea-shape",
+      "summary": "assess shape workflow",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:extensions/assess/commands/speckit.assess.shape.md"
+    },
+    "spec-kit:extensions/assess/commands/speckit.assess.decide.md": {
+      "provider": "spec-kit",
+      "path": "extensions/assess/commands/speckit.assess.decide.md",
+      "entry": "design",
+      "capability": "idea-decide",
+      "summary": "assess decide workflow",
+      "mode": "spec-template",
+      "disposition": "primary",
+      "primary": "spec-kit:extensions/assess/commands/speckit.assess.decide.md"
+    },
+    "spec-kit:docs/extensions/cli.md": {
+      "provider": "spec-kit",
+      "path": "docs/extensions/cli.md",
+      "entry": "init",
+      "capability": "extension-admin",
+      "summary": "Native extensions command family, including catalog operations",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/extensions/cli.md"
+    },
+    "spec-kit:docs/presets/cli.md": {
+      "provider": "spec-kit",
+      "path": "docs/presets/cli.md",
+      "entry": "init",
+      "capability": "preset-admin",
+      "summary": "Native presets command family, including catalog operations",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/presets/cli.md"
+    },
+    "spec-kit:docs/bundles/cli.md": {
+      "provider": "spec-kit",
+      "path": "docs/bundles/cli.md",
+      "entry": "init",
+      "capability": "bundle-admin",
+      "summary": "Native bundles command family, including catalog operations",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/bundles/cli.md"
+    },
+    "spec-kit:docs/workflows/cli.md": {
+      "provider": "spec-kit",
+      "path": "docs/workflows/cli.md",
+      "entry": "init",
+      "capability": "workflow-admin",
+      "summary": "Native workflows command family, including catalog operations",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/workflows/cli.md"
+    },
+    "spec-kit:docs/workflow-steps/cli.md": {
+      "provider": "spec-kit",
+      "path": "docs/workflow-steps/cli.md",
+      "entry": "init",
+      "capability": "step-admin",
+      "summary": "Native workflow-steps command family, including catalog operations",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/workflow-steps/cli.md"
+    },
+    "spec-kit:docs/installation.md": {
+      "provider": "spec-kit",
+      "path": "docs/installation.md",
+      "entry": "init",
+      "capability": "spec-native",
+      "summary": "Native CLI setup, integration and version management",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/installation.md"
+    },
+    "spec-kit:.github/skills/add-community-extension/SKILL.md": {
+      "provider": "spec-kit",
+      "path": ".github/skills/add-community-extension/SKILL.md",
+      "entry": "init",
+      "capability": "community-extension",
+      "summary": "Upstream maintainer contribution workflow; only explicit upstream context",
+      "mode": "maintainer",
+      "disposition": "primary",
+      "primary": "spec-kit:.github/skills/add-community-extension/SKILL.md"
+    },
+    "spec-kit:.github/skills/code-review/SKILL.md": {
+      "provider": "spec-kit",
+      "path": ".github/skills/code-review/SKILL.md",
+      "entry": "audit",
+      "capability": "spec-maintainer-review",
+      "summary": "Upstream-specific review; only explicit upstream context",
+      "mode": "maintainer",
+      "disposition": "primary",
+      "primary": "spec-kit:.github/skills/code-review/SKILL.md"
+    },
+    "ponytail:skills/ponytail/SKILL.md": {
+      "provider": "ponytail",
+      "path": "skills/ponytail/SKILL.md",
+      "entry": "dev",
+      "capability": "simplify",
+      "summary": "Simplest sufficient implementation and intensity",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "ponytail:skills/ponytail/SKILL.md"
+    },
+    "ponytail:.openclaw/skills/ponytail/SKILL.md": {
+      "provider": "ponytail",
+      "path": ".openclaw/skills/ponytail/SKILL.md",
+      "entry": "dev",
+      "capability": "simplify",
+      "summary": "Simplest sufficient implementation and intensity",
+      "mode": "mirror",
+      "disposition": "merged",
+      "primary": "ponytail:skills/ponytail/SKILL.md"
+    },
+    "ponytail:commands/ponytail.toml": {
+      "provider": "ponytail",
+      "path": "commands/ponytail.toml",
+      "entry": "dev",
+      "capability": "simplify",
+      "summary": "Simplest sufficient implementation and intensity",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "ponytail:skills/ponytail/SKILL.md"
+    },
+    "ponytail:skills/ponytail-audit/SKILL.md": {
+      "provider": "ponytail",
+      "path": "skills/ponytail-audit/SKILL.md",
+      "entry": "audit",
+      "capability": "repo-audit",
+      "summary": "Repository audit",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "ponytail:skills/ponytail-audit/SKILL.md"
+    },
+    "ponytail:.openclaw/skills/ponytail-audit/SKILL.md": {
+      "provider": "ponytail",
+      "path": ".openclaw/skills/ponytail-audit/SKILL.md",
+      "entry": "audit",
+      "capability": "repo-audit",
+      "summary": "Repository audit",
+      "mode": "mirror",
+      "disposition": "merged",
+      "primary": "ponytail:skills/ponytail-audit/SKILL.md"
+    },
+    "ponytail:commands/ponytail-audit.toml": {
+      "provider": "ponytail",
+      "path": "commands/ponytail-audit.toml",
+      "entry": "audit",
+      "capability": "repo-audit",
+      "summary": "Repository audit",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "ponytail:skills/ponytail-audit/SKILL.md"
+    },
+    "ponytail:skills/ponytail-review/SKILL.md": {
+      "provider": "ponytail",
+      "path": "skills/ponytail-review/SKILL.md",
+      "entry": "audit",
+      "capability": "review",
+      "summary": "Diff review",
+      "mode": "instructions",
+      "disposition": "complement",
+      "primary": "agent-skills:skills/code-review-and-quality/SKILL.md"
+    },
+    "ponytail:.openclaw/skills/ponytail-review/SKILL.md": {
+      "provider": "ponytail",
+      "path": ".openclaw/skills/ponytail-review/SKILL.md",
+      "entry": "audit",
+      "capability": "review",
+      "summary": "Diff review",
+      "mode": "mirror",
+      "disposition": "merged",
+      "primary": "agent-skills:skills/code-review-and-quality/SKILL.md"
+    },
+    "ponytail:commands/ponytail-review.toml": {
+      "provider": "ponytail",
+      "path": "commands/ponytail-review.toml",
+      "entry": "audit",
+      "capability": "review",
+      "summary": "Diff review",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "agent-skills:skills/code-review-and-quality/SKILL.md"
+    },
+    "ponytail:skills/ponytail-debt/SKILL.md": {
+      "provider": "ponytail",
+      "path": "skills/ponytail-debt/SKILL.md",
+      "entry": "audit",
+      "capability": "debt",
+      "summary": "Collect deferred shortcuts",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "ponytail:skills/ponytail-debt/SKILL.md"
+    },
+    "ponytail:.openclaw/skills/ponytail-debt/SKILL.md": {
+      "provider": "ponytail",
+      "path": ".openclaw/skills/ponytail-debt/SKILL.md",
+      "entry": "audit",
+      "capability": "debt",
+      "summary": "Collect deferred shortcuts",
+      "mode": "mirror",
+      "disposition": "merged",
+      "primary": "ponytail:skills/ponytail-debt/SKILL.md"
+    },
+    "ponytail:commands/ponytail-debt.toml": {
+      "provider": "ponytail",
+      "path": "commands/ponytail-debt.toml",
+      "entry": "audit",
+      "capability": "debt",
+      "summary": "Collect deferred shortcuts",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "ponytail:skills/ponytail-debt/SKILL.md"
+    },
+    "ponytail:skills/ponytail-gain/SKILL.md": {
+      "provider": "ponytail",
+      "path": "skills/ponytail-gain/SKILL.md",
+      "entry": "audit",
+      "capability": "gain",
+      "summary": "Read author benchmark, not project performance",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "ponytail:skills/ponytail-gain/SKILL.md"
+    },
+    "ponytail:.openclaw/skills/ponytail-gain/SKILL.md": {
+      "provider": "ponytail",
+      "path": ".openclaw/skills/ponytail-gain/SKILL.md",
+      "entry": "audit",
+      "capability": "gain",
+      "summary": "Read author benchmark, not project performance",
+      "mode": "mirror",
+      "disposition": "merged",
+      "primary": "ponytail:skills/ponytail-gain/SKILL.md"
+    },
+    "ponytail:commands/ponytail-gain.toml": {
+      "provider": "ponytail",
+      "path": "commands/ponytail-gain.toml",
+      "entry": "audit",
+      "capability": "gain",
+      "summary": "Read author benchmark, not project performance",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "ponytail:skills/ponytail-gain/SKILL.md"
+    },
+    "ponytail:skills/ponytail-help/SKILL.md": {
+      "provider": "ponytail",
+      "path": "skills/ponytail-help/SKILL.md",
+      "entry": "init",
+      "capability": "help",
+      "summary": "Usage and mode help",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "ponytail:skills/ponytail-help/SKILL.md"
+    },
+    "ponytail:.openclaw/skills/ponytail-help/SKILL.md": {
+      "provider": "ponytail",
+      "path": ".openclaw/skills/ponytail-help/SKILL.md",
+      "entry": "init",
+      "capability": "help",
+      "summary": "Usage and mode help",
+      "mode": "mirror",
+      "disposition": "merged",
+      "primary": "ponytail:skills/ponytail-help/SKILL.md"
+    },
+    "ponytail:commands/ponytail-help.toml": {
+      "provider": "ponytail",
+      "path": "commands/ponytail-help.toml",
+      "entry": "init",
+      "capability": "help",
+      "summary": "Usage and mode help",
+      "mode": "command-reference",
+      "disposition": "merged",
+      "primary": "ponytail:skills/ponytail-help/SKILL.md"
+    },
+    "ponytail:README.md": {
+      "provider": "ponytail",
+      "path": "README.md",
+      "entry": "audit",
+      "capability": "band",
+      "summary": "Claude-specific band, cost board, past-session import and modes",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "ponytail:README.md"
+    },
+    "archify:archify/SKILL.md": {
+      "provider": "archify",
+      "path": "archify/SKILL.md",
+      "entry": "design",
+      "capability": "visualize",
+      "summary": "Native diagram, explainer, story, source evidence, diagnosis, rendering and delivery",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "archify:archify/SKILL.md"
+    },
+    "archify:archify-pr/SKILL.md": {
+      "provider": "archify",
+      "path": "archify-pr/SKILL.md",
+      "entry": "audit",
+      "capability": "pr-visualize",
+      "summary": "Pinned PR diff diagrams, optional attach with approval",
+      "mode": "instructions",
+      "disposition": "primary",
+      "primary": "archify:archify-pr/SKILL.md"
+    },
+    "archify:.agents/skills/archify-review/SKILL.md": {
+      "provider": "archify",
+      "path": ".agents/skills/archify-review/SKILL.md",
+      "entry": "audit",
+      "capability": "archify-review",
+      "summary": "Archify maintainer review",
+      "mode": "maintainer",
+      "disposition": "primary",
+      "primary": "archify:.agents/skills/archify-review/SKILL.md"
+    },
+    "archify:.agents/skills/archify-tuning/SKILL.md": {
+      "provider": "archify",
+      "path": ".agents/skills/archify-tuning/SKILL.md",
+      "entry": "design",
+      "capability": "archify-tuning",
+      "summary": "Archify renderer tuning",
+      "mode": "maintainer",
+      "disposition": "primary",
+      "primary": "archify:.agents/skills/archify-tuning/SKILL.md"
+    },
+    "archify:.agents/skills/simplify-codebase/SKILL.md": {
+      "provider": "archify",
+      "path": ".agents/skills/simplify-codebase/SKILL.md",
+      "entry": "simpler",
+      "capability": "archify-simplify",
+      "summary": "Archify-specific code cleanup",
+      "mode": "maintainer",
+      "disposition": "primary",
+      "primary": "archify:.agents/skills/simplify-codebase/SKILL.md"
+    },
+    "archify:.agents/skills/test-value/SKILL.md": {
+      "provider": "archify",
+      "path": ".agents/skills/test-value/SKILL.md",
+      "entry": "audit",
+      "capability": "archify-test-value",
+      "summary": "Archify test-value review",
+      "mode": "maintainer",
+      "disposition": "primary",
+      "primary": "archify:.agents/skills/test-value/SKILL.md"
+    },
+    "archify:archify/references/repository-authoring.md": {
+      "provider": "archify",
+      "path": "archify/references/repository-authoring.md",
+      "entry": "audit",
+      "capability": "architecture-diagnosis",
+      "summary": "Archify repository-authoring reference",
+      "mode": "reference",
+      "disposition": "primary",
+      "primary": "archify:archify/references/repository-authoring.md"
+    },
+    "archify:archify/references/authoring-defaults.md": {
+      "provider": "archify",
+      "path": "archify/references/authoring-defaults.md",
+      "entry": "simpler",
+      "capability": "visualize",
+      "summary": "Archify authoring-defaults reference",
+      "mode": "reference",
+      "disposition": "merged",
+      "primary": "archify:archify/SKILL.md"
+    },
+    "archify:archify/references/authoring-contract.md": {
+      "provider": "archify",
+      "path": "archify/references/authoring-contract.md",
+      "entry": "simpler",
+      "capability": "visualize",
+      "summary": "Archify authoring-contract reference",
+      "mode": "reference",
+      "disposition": "merged",
+      "primary": "archify:archify/SKILL.md"
+    },
+    "archify:archify/references/delivery-contract.md": {
+      "provider": "archify",
+      "path": "archify/references/delivery-contract.md",
+      "entry": "simpler",
+      "capability": "diagram-delivery",
+      "summary": "Archify delivery-contract reference",
+      "mode": "reference",
+      "disposition": "primary",
+      "primary": "archify:archify/references/delivery-contract.md"
+    },
+    "archify:archify/references/story-authoring.md": {
+      "provider": "archify",
+      "path": "archify/references/story-authoring.md",
+      "entry": "simpler",
+      "capability": "story",
+      "summary": "Archify story-authoring reference",
+      "mode": "reference",
+      "disposition": "primary",
+      "primary": "archify:archify/references/story-authoring.md"
+    },
+    "archify:archify/references/explainer-authoring.md": {
+      "provider": "archify",
+      "path": "archify/references/explainer-authoring.md",
+      "entry": "simpler",
+      "capability": "explainer",
+      "summary": "Archify explainer-authoring reference",
+      "mode": "reference",
+      "disposition": "primary",
+      "primary": "archify:archify/references/explainer-authoring.md"
+    },
+    "archify:archify/references/architecture-layout-repair.md": {
+      "provider": "archify",
+      "path": "archify/references/architecture-layout-repair.md",
+      "entry": "simpler",
+      "capability": "diagram-repair",
+      "summary": "Archify architecture-layout-repair reference",
+      "mode": "reference",
+      "disposition": "primary",
+      "primary": "archify:archify/references/architecture-layout-repair.md"
+    },
+    "archify:archify/references/brand-marks.md": {
+      "provider": "archify",
+      "path": "archify/references/brand-marks.md",
+      "entry": "simpler",
+      "capability": "diagram-brand",
+      "summary": "Archify brand-marks reference",
+      "mode": "reference",
+      "disposition": "primary",
+      "primary": "archify:archify/references/brand-marks.md"
+    },
+    "archify:archify/references/update-awareness.md": {
+      "provider": "archify",
+      "path": "archify/references/update-awareness.md",
+      "entry": "simpler",
+      "capability": "archify-update",
+      "summary": "Archify update-awareness reference",
+      "mode": "reference",
+      "disposition": "primary",
+      "primary": "archify:archify/references/update-awareness.md"
+    },
+    "archify:archify/references/viewer-runtime.md": {
+      "provider": "archify",
+      "path": "archify/references/viewer-runtime.md",
+      "entry": "simpler",
+      "capability": "diagram-runtime",
+      "summary": "Archify viewer-runtime reference",
+      "mode": "reference",
+      "disposition": "primary",
+      "primary": "archify:archify/references/viewer-runtime.md"
+    },
+    "archify:archify/references/pr-review.md": {
+      "provider": "archify",
+      "path": "archify/references/pr-review.md",
+      "entry": "audit",
+      "capability": "pr-visualize",
+      "summary": "Archify pr-review reference",
+      "mode": "reference",
+      "disposition": "merged",
+      "primary": "archify:archify-pr/SKILL.md"
+    },
+    "spec-kit:docs/integrations/cli.md": {
+      "provider": "spec-kit",
+      "path": "docs/integrations/cli.md",
+      "entry": "init",
+      "capability": "integration-admin",
+      "summary": "Manage native agent integrations, status, upgrade and switch",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/integrations/cli.md"
+    },
+    "spec-kit:docs/integrations/catalog.md": {
+      "provider": "spec-kit",
+      "path": "docs/integrations/catalog.md",
+      "entry": "init",
+      "capability": "integration-catalog",
+      "summary": "Manage integration catalogs and approved sources",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/integrations/catalog.md"
+    },
+    "spec-kit:docs/workflows/overlays.md": {
+      "provider": "spec-kit",
+      "path": "docs/workflows/overlays.md",
+      "entry": "init",
+      "capability": "workflow-overlays",
+      "summary": "Manage workflow overlays and priority",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/workflows/overlays.md"
+    },
+    "spec-kit:docs/workflows/functions.md": {
+      "provider": "spec-kit",
+      "path": "docs/workflows/functions.md",
+      "entry": "init",
+      "capability": "workflow-functions",
+      "summary": "Manage workflow function definitions",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/workflows/functions.md"
+    },
+    "spec-kit:docs/extensions/catalogs.md": {
+      "provider": "spec-kit",
+      "path": "docs/extensions/catalogs.md",
+      "entry": "init",
+      "capability": "extensions-catalog",
+      "summary": "Manage extension catalogs",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/extensions/catalogs.md"
+    },
+    "spec-kit:docs/presets/catalogs.md": {
+      "provider": "spec-kit",
+      "path": "docs/presets/catalogs.md",
+      "entry": "init",
+      "capability": "presets-catalog",
+      "summary": "Manage preset catalogs",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/presets/catalogs.md"
+    },
+    "spec-kit:docs/bundles/catalogs.md": {
+      "provider": "spec-kit",
+      "path": "docs/bundles/catalogs.md",
+      "entry": "init",
+      "capability": "bundles-catalog",
+      "summary": "Manage bundle catalogs",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/bundles/catalogs.md"
+    },
+    "spec-kit:docs/workflows/catalogs.md": {
+      "provider": "spec-kit",
+      "path": "docs/workflows/catalogs.md",
+      "entry": "init",
+      "capability": "workflows-catalog",
+      "summary": "Manage workflow catalogs",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/workflows/catalogs.md"
+    },
+    "spec-kit:docs/workflow-steps/catalogs.md": {
+      "provider": "spec-kit",
+      "path": "docs/workflow-steps/catalogs.md",
+      "entry": "init",
+      "capability": "steps-catalog",
+      "summary": "Manage workflow-step catalogs",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:docs/workflow-steps/catalogs.md"
+    },
+    "spec-kit:src/specify_cli/artifacts/_commands.py": {
+      "provider": "spec-kit",
+      "path": "src/specify_cli/artifacts/_commands.py",
+      "entry": "init",
+      "capability": "native-artifacts",
+      "summary": "Inspect native artifact inventory and provenance",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:src/specify_cli/artifacts/_commands.py"
+    },
+    "spec-kit:src/specify_cli/events/command_run.py": {
+      "provider": "spec-kit",
+      "path": "src/specify_cli/events/command_run.py",
+      "entry": "init",
+      "capability": "native-events",
+      "summary": "Execute native extension lifecycle events explicitly",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:src/specify_cli/events/command_run.py"
+    },
+    "spec-kit:src/specify_cli/command_mcp.py": {
+      "provider": "spec-kit",
+      "path": "src/specify_cli/command_mcp.py",
+      "entry": "init",
+      "capability": "native-mcp",
+      "summary": "Native MCP configuration and operations",
+      "mode": "native",
+      "disposition": "primary",
+      "primary": "spec-kit:src/specify_cli/command_mcp.py"
+    }
+  },
+  "task_hints": {
+    "init.bootstrap": {
+      "entry": "init",
+      "title": "Initialize or adopt project",
+      "examples": [
+        "初始化项目文档",
+        "接管已有项目",
+        "setup project"
+      ],
+      "capabilities": [
+        "context",
+        "constraints",
+        "git",
+        "ci"
+      ]
+    },
+    "requirements.manage": {
+      "entry": "requirements",
+      "title": "Record and decompose requirements",
+      "examples": [
+        "记录刚才需求",
+        "需求拆解",
+        "新增修改删除需求",
+        "record and decompose requirements"
+      ],
+      "capabilities": [
+        "clarify",
+        "interview",
+        "specify",
+        "req-check"
+      ]
+    },
+    "design.solution": {
+      "entry": "design",
+      "title": "Design solution before implementation",
+      "examples": [
+        "技术方案",
+        "技术架构",
+        "技术流程",
+        "compare approaches"
+      ],
+      "capabilities": [
+        "explore",
+        "sources",
+        "simplify",
+        "plan",
+        "docs",
+        "visualize",
+        "doubt"
+      ]
+    },
+    "contract.progressive": {
+      "entry": "contract",
+      "title": "Interfaces → skeleton → integration → tasks",
+      "examples": [
+        "接口和样例",
+        "搭建代码骨架",
+        "骨架联调",
+        "contract and skeleton"
+      ],
+      "capabilities": [
+        "interfaces",
+        "simplify",
+        "visualize",
+        "tdd",
+        "debug",
+        "verify",
+        "tasks",
+        "plan"
+      ]
+    },
+    "contract.interfaces": {
+      "entry": "contract",
+      "title": "Define interfaces only",
+      "examples": [
+        "仅接口定义",
+        "API设计",
+        "schema"
+      ],
+      "capabilities": [
+        "interfaces"
+      ]
+    },
+    "contract.skeleton": {
+      "entry": "contract",
+      "title": "Review skeleton only",
+      "examples": [
+        "只搭建骨架",
+        "代码骨架"
+      ],
+      "capabilities": [
+        "simplify",
+        "visualize"
+      ]
+    },
+    "contract.integrate": {
+      "entry": "contract",
+      "title": "Run skeleton integration and prepare plan",
+      "examples": [
+        "骨架全流程测试",
+        "stub integration"
+      ],
+      "capabilities": [
+        "tdd",
+        "debug",
+        "verify",
+        "tasks",
+        "plan"
+      ]
+    },
+    "dev.implement": {
+      "entry": "dev",
+      "title": "Progressive module development",
+      "examples": [
+        "实现模块",
+        "新增功能",
+        "按计划自动开发",
+        "implement module"
+      ],
+      "capabilities": [
+        "git",
+        "tdd",
+        "simplify",
+        "incremental",
+        "debug",
+        "review",
+        "review-dispatch",
+        "docs",
+        "visualize",
+        "verify"
+      ]
+    },
+    "dev.bug": {
+      "entry": "dev",
+      "title": "Fix a scoped defect",
+      "examples": [
+        "修复bug",
+        "修复异常",
+        "fix bug"
+      ],
+      "capabilities": [
+        "debug",
+        "tdd",
+        "simplify",
+        "verify"
+      ]
+    },
+    "dev.algorithm": {
+      "entry": "dev",
+      "title": "Bounded algorithm optimization",
+      "examples": [
+        "算法优化",
+        "提高准确率",
+        "optimize accuracy",
+        "Goal"
+      ],
+      "capabilities": [
+        "debug",
+        "simplify",
+        "verify"
+      ]
+    },
+    "dev.frontend": {
+      "entry": "dev",
+      "title": "Frontend progressive development",
+      "examples": [
+        "前端开发",
+        "页面交互",
+        "UI开发",
+        "frontend"
+      ],
+      "capabilities": [
+        "frontend",
+        "simplify",
+        "tdd",
+        "browser",
+        "accessibility",
+        "verify"
+      ]
+    },
+    "dev.backend": {
+      "entry": "dev",
+      "title": "Backend progressive development",
+      "examples": [
+        "后端开发",
+        "服务实现",
+        "backend"
+      ],
+      "capabilities": [
+        "interfaces",
+        "security",
+        "tdd",
+        "simplify",
+        "observability",
+        "verify"
+      ]
+    },
+    "accept.module": {
+      "entry": "accept",
+      "title": "Verify and protect module or system",
+      "examples": [
+        "模块验收",
+        "系统验收",
+        "自动化测试",
+        "验收基线",
+        "accept module"
+      ],
+      "capabilities": [
+        "test-design",
+        "verify",
+        "converge",
+        "review"
+      ]
+    },
+    "accept.test": {
+      "entry": "accept",
+      "title": "Design or run tests",
+      "examples": [
+        "测试设计",
+        "执行单元测试",
+        "执行回归测试",
+        "run tests"
+      ],
+      "capabilities": [
+        "test-design",
+        "tdd",
+        "verify"
+      ]
+    },
+    "audit.docs-consistency": {
+      "entry": "audit",
+      "title": "Check docs against code",
+      "examples": [
+        "文档一致性检查",
+        "检查文档代码一致性",
+        "documentation consistency"
+      ],
+      "capabilities": [
+        "visualize",
+        "docs"
+      ]
+    },
+    "audit.bugs": {
+      "entry": "audit",
+      "title": "Find and reproduce bugs",
+      "examples": [
+        "进行bug检查",
+        "潜在bug",
+        "bug check"
+      ],
+      "capabilities": [
+        "review",
+        "debug"
+      ]
+    },
+    "audit.health": {
+      "entry": "audit",
+      "title": "Review project health",
+      "examples": [
+        "项目健康检查",
+        "代码质量",
+        "项目审查",
+        "audit repository"
+      ],
+      "capabilities": [
+        "repo-audit",
+        "visualize",
+        "review"
+      ]
+    },
+    "simpler.docs": {
+      "entry": "simpler",
+      "title": "Simplify documents",
+      "examples": [
+        "文档整理",
+        "精简文档",
+        "提高文档可读性",
+        "simplify docs"
+      ],
+      "capabilities": [
+        "docs",
+        "visualize"
+      ]
+    },
+    "simpler.code": {
+      "entry": "simpler",
+      "title": "Simplify code without behavior changes",
+      "examples": [
+        "代码整理",
+        "减少重复代码",
+        "重构",
+        "simplify code"
+      ],
+      "capabilities": [
+        "repo-audit",
+        "simplify",
+        "visualize",
+        "verify",
+        "review"
+      ]
+    },
+    "simpler.tests": {
+      "entry": "simpler",
+      "title": "Simplify tests without weakening verification",
+      "examples": [
+        "测试脚本整理",
+        "重复测试",
+        "fixture",
+        "simplify tests"
+      ],
+      "capabilities": [
+        "test-design",
+        "verify",
+        "tdd",
+        "simplify"
+      ]
+    },
+    "design.archify-architecture": {
+      "entry": "design",
+      "title": "Archify architecture",
+      "examples": [
+        "architecture",
+        "archify architecture"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "design.archify-workflow": {
+      "entry": "design",
+      "title": "Archify workflow",
+      "examples": [
+        "workflow",
+        "archify workflow"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "contract.archify-sequence": {
+      "entry": "contract",
+      "title": "Archify sequence",
+      "examples": [
+        "sequence",
+        "archify sequence"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "contract.archify-dataflow": {
+      "entry": "contract",
+      "title": "Archify dataflow",
+      "examples": [
+        "dataflow",
+        "archify dataflow"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "design.archify-lifecycle": {
+      "entry": "design",
+      "title": "Archify lifecycle",
+      "examples": [
+        "lifecycle",
+        "archify lifecycle"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "contract.archify-erd": {
+      "entry": "contract",
+      "title": "Archify erd",
+      "examples": [
+        "erd",
+        "archify erd"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "contract.archify-class": {
+      "entry": "contract",
+      "title": "Archify class",
+      "examples": [
+        "class",
+        "archify class"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "contract.archify-tree": {
+      "entry": "contract",
+      "title": "Archify tree",
+      "examples": [
+        "tree",
+        "archify tree"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "audit.archify-timeline": {
+      "entry": "audit",
+      "title": "Archify timeline",
+      "examples": [
+        "timeline",
+        "archify timeline"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "audit.archify-waterfall": {
+      "entry": "audit",
+      "title": "Archify waterfall",
+      "examples": [
+        "waterfall",
+        "archify waterfall"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "simpler.archify-explainer": {
+      "entry": "simpler",
+      "title": "Archify explainer",
+      "examples": [
+        "explainer",
+        "archify explainer"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "simpler.archify-story": {
+      "entry": "simpler",
+      "title": "Archify story",
+      "examples": [
+        "story",
+        "archify story"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "simpler.archify-story-video": {
+      "entry": "simpler",
+      "title": "Archify story-video",
+      "examples": [
+        "story-video",
+        "archify story-video"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "audit.archify-architecture-delta": {
+      "entry": "audit",
+      "title": "Archify architecture-delta",
+      "examples": [
+        "architecture-delta",
+        "archify architecture-delta"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "design.archify-deployment-ownership": {
+      "entry": "design",
+      "title": "Archify deployment-ownership",
+      "examples": [
+        "deployment-ownership",
+        "archify deployment-ownership"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "audit.archify-source-evidence": {
+      "entry": "audit",
+      "title": "Archify source-evidence",
+      "examples": [
+        "source-evidence",
+        "archify source-evidence"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "simpler.archify-export": {
+      "entry": "simpler",
+      "title": "Archify export",
+      "examples": [
+        "export",
+        "archify export"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "simpler.archify-validate": {
+      "entry": "simpler",
+      "title": "Archify validate",
+      "examples": [
+        "validate",
+        "archify validate"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "simpler.archify-preview": {
+      "entry": "simpler",
+      "title": "Archify preview",
+      "examples": [
+        "preview",
+        "archify preview"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "simpler.archify-deliver": {
+      "entry": "simpler",
+      "title": "Archify deliver",
+      "examples": [
+        "deliver",
+        "archify deliver"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "simpler.archify-finalize": {
+      "entry": "simpler",
+      "title": "Archify finalize",
+      "examples": [
+        "finalize",
+        "archify finalize"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "design.archify-guide": {
+      "entry": "design",
+      "title": "Archify guide",
+      "examples": [
+        "guide",
+        "archify guide"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "init.archify-doctor": {
+      "entry": "init",
+      "title": "Archify doctor",
+      "examples": [
+        "doctor",
+        "archify doctor"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "init.archify-demo": {
+      "entry": "init",
+      "title": "Archify demo",
+      "examples": [
+        "demo",
+        "archify demo"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "simpler.archify-layout-repair": {
+      "entry": "simpler",
+      "title": "Archify layout-repair",
+      "examples": [
+        "layout-repair",
+        "archify layout-repair"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "simpler.archify-brand-marks": {
+      "entry": "simpler",
+      "title": "Archify brand-marks",
+      "examples": [
+        "brand-marks",
+        "archify brand-marks"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "simpler.archify-viewer-runtime": {
+      "entry": "simpler",
+      "title": "Archify viewer-runtime",
+      "examples": [
+        "viewer-runtime",
+        "archify viewer-runtime"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "init.archify-update-awareness": {
+      "entry": "init",
+      "title": "Archify update-awareness",
+      "examples": [
+        "update-awareness",
+        "archify update-awareness"
+      ],
+      "capabilities": [
+        "visualize"
+      ]
+    },
+    "audit.archify-pr-preflight": {
+      "entry": "audit",
+      "title": "Archify pr-preflight",
+      "examples": [
+        "pr-preflight",
+        "archify pr-preflight"
+      ],
+      "capabilities": [
+        "pr-visualize"
+      ]
+    },
+    "audit.archify-pr-build": {
+      "entry": "audit",
+      "title": "Archify pr-build",
+      "examples": [
+        "pr-build",
+        "archify pr-build"
+      ],
+      "capabilities": [
+        "pr-visualize"
+      ]
+    },
+    "audit.archify-pr-attach": {
+      "entry": "audit",
+      "title": "Archify pr-attach",
+      "examples": [
+        "pr-attach",
+        "archify pr-attach"
+      ],
+      "capabilities": [
+        "pr-visualize"
+      ]
+    },
+    "dev.ponytail-lite": {
+      "entry": "dev",
+      "title": "Set simplification intensity lite",
+      "examples": [
+        "ponytail lite",
+        "simplification lite"
+      ],
+      "capabilities": [
+        "simplify"
+      ]
+    },
+    "dev.ponytail-full": {
+      "entry": "dev",
+      "title": "Set simplification intensity full",
+      "examples": [
+        "ponytail full",
+        "simplification full"
+      ],
+      "capabilities": [
+        "simplify"
+      ]
+    },
+    "dev.ponytail-ultra": {
+      "entry": "dev",
+      "title": "Set simplification intensity ultra",
+      "examples": [
+        "ponytail ultra",
+        "simplification ultra"
+      ],
+      "capabilities": [
+        "simplify"
+      ]
+    },
+    "dev.ponytail-off": {
+      "entry": "dev",
+      "title": "Set simplification intensity off",
+      "examples": [
+        "ponytail off",
+        "simplification off"
+      ],
+      "capabilities": []
+    },
+    "audit.band-on": {
+      "entry": "audit",
+      "title": "Ponytail session band on",
+      "examples": [
+        "band on"
+      ],
+      "capabilities": [
+        "band"
+      ]
+    },
+    "audit.band-off": {
+      "entry": "audit",
+      "title": "Ponytail session band off",
+      "examples": [
+        "band off"
+      ],
+      "capabilities": [
+        "band"
+      ]
+    },
+    "audit.band-import": {
+      "entry": "audit",
+      "title": "Ponytail session band import",
+      "examples": [
+        "band import"
+      ],
+      "capabilities": [
+        "band"
+      ]
+    }
+  }
+}

@@ -1,22 +1,17 @@
-# Live host acceptance checklist
+# Live host acceptance
 
-This is a required validation stage before claiming full native parity. The v0.1.0 local test suite does not substitute for it.
+Run in actual Codex and Claude Code sessions on a disposable project. Record host and provider versions, commands and evidence.
 
-| Scenario | Expected proof |
+| Scenario | Expected |
 |---|---|
-| Network installation | Five `deps sync` checkouts match lock, all `deps doctor` resources ready |
-| Codex / Claude Code discovery | Exactly eight Trellis entries per chosen scope; explicit invocation works |
-| Init & requirements | Existing project files preserved, exact raw conversation/document excerpts appended, F IDs stable and linked |
-| Design and contract | Actual approval stop before architecture, interface, and skeleton progression; approved example fixtures drive real stub integration |
-| Module dev | Real upstream skill instructions read; meaningful red-green tests, bounded debugging and accepted scope |
-| Audit routing | Same entry + docs consistency vs bug check produces different route, evidence and no unauthorized source edits |
-| Simpler routing | Code vs docs vs test cleanup select distinct routes, approved behavior preserved |
-| Acceptance | Approved policy executes every command; nonzero/stale receipts block; baseline protects code, tests, docs and contract |
-| Change after acceptance | Change grant required before editing; guard remains blocked until new passing evidence and re-acceptance |
-| Spec Kit native | Pinned native CLI, required extensions and generated workflow artifacts; no unresolved template placeholders |
-| Archify | Actual Node renderer and browser finalize, SVG/HTML receipts, source-linked diagrams; PR attachment requires approval |
-| Native Ponytail Band | Supported Claude environment; no import/session telemetry without approval, unsupported host explicitly blocked |
-| Subagents, browser, quality | Real host capabilities, specialist review/test evidence; absent features reported blocked, not fabricated |
-| Full upstream coverage | Read all locked source definitions and exercise each distinct mapped capability; record pass/fail/blocked by host and version |
+| Network install | Five pinned checkouts ready; only eight entries discovered |
+| Requirements | Directly editable two-column raw table, stable IDs, date, strike deletion; no command-only row |
+| Small docs task | Direct execution and check; no full lifecycle or extra state |
+| Major feature | Separate design/interface/skeleton approvals; sample integration then real development |
+| Audit | Docs consistency and bug checks use distinct capabilities, read-only |
+| Simpler | Code/docs/tests distinct routing; relevant regression and no behavior drift |
+| Acceptance | Approved commands actually run; failures reported; Git and CI protect behavior/evaluation |
+| Native capabilities | Real pinned Spec Kit CLI, Archify renderer/browser, Ponytail Band where supported, actual subagents and specialist tools; unavailable capabilities reported blocked |
+| Coverage | Exercise each distinct mapped capability; record pass/fail/blocked |
 
-For an end-to-end smoke test use a small disposable project with a simple parser, known good tests and intentionally contradictory documentation. Run both audit cases, one full progressive lifecycle and one accepted-module change in each host. Record actual host version, exact provider commits, step evidence, approval events and receipts. Store only sanitized logs. No native end-to-end result is claimed unless actually run.
+Local unit tests do not prove semantic routing or live host parity.

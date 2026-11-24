@@ -1,13 +1,7 @@
-# Suggested shared project rule block
+# Project rules
 
-After approval, merge a single shared rule document into the project and place a short, effective pointer in `AGENTS.md` and `CLAUDE.md` (only for hosts used). Preserve existing instructions. Verify each host actually reads the shared rules; put essential safeguards inline if file references are not auto-loaded.
+After approval merge a short rule block into applicable AGENTS.md / CLAUDE.md; do not overwrite user instructions. Prefer one shared source where supported.
 
-```markdown
 <!-- trellis-managed-start -->
-Use Trellis for progressive, human-controlled development. For each explicit new, changed or cancelled product requirement from chat or uploaded documents, register the exact user request before implementing and maintain linked numbered functional requirements. Do not record AI suggestions as confirmed user requests. Use the Trellis entry matching intent: trellis-init, trellis-requirements, trellis-design, trellis-contract, trellis-dev, trellis-accept, trellis-audit, trellis-simpler.
-
-Major changes: approve design, interface/examples, code skeleton and module plan separately before production implementation. Respect scope, public contracts and approved criteria; do not weaken tests or edit independent evaluator truth. Protect accepted baselines with Git, contract/regression tests and a human-approved change gate. Update actual mechanism docs only when affected; do not rewrite approved design to hide implementation drift. Never claim unrun tests passed. Keep status, decisions and evidence durable. If blocked, explain what human decision is required.
+Use Trellis for human-controlled development. Record real user product requirements in the numbered Markdown raw/functional requirement tables; skip operation-only commands and AI guesses. Keep IDs stable, edit in place, strike deleted raw descriptions and update date. Use the eight Trellis entry skills; load only relevant capabilities. Small reversible tasks execute and verify directly. For major changes confirm design, interfaces, skeleton and consequential plan/acceptance criteria in order before implementation. Protect accepted behavior and independent tests with Git, actual regression checks and explicit approval for material changes. Do not weaken evaluation or claim unrun tests passed. Keep documentation concise and consistent with code.
 <!-- trellis-managed-end -->
-```
-
-The block is an agent instruction, not a security boundary. Branch protection and CI must be configured separately by the project owner. Put tool-specific differences in the respective host entry file, not in duplicate shared standards.

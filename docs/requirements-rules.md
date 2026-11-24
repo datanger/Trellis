@@ -1,0 +1,9 @@
+# Requirements
+
+Use `docs/requirements/raw-requirements.md` and `docs/requirements/functional-requirements.md` (reuse an existing equivalent location after agreement). Both are canonical Markdown; user and agent may edit directly. Templates in `templates/` are optional starting points, never overwrite existing docs.
+
+Raw table: exactly two columns `序号` and `需求描述`. Use stable increasing R-0001 IDs (preserve existing ID width), with the last edit date `(YYYY-MM-DD)` after the description; Chinese parentheses also accepted. Add at end, modify in place, delete by wrapping only the description in `~~...~~`, restore by removing the strike. Update date on modification/deletion/restoration. Never reuse or renumber IDs. Preserve original words or faithful excerpts; do not invent requirements. Split only clearly independent requests, avoid duplicates. Escape pipes as `&#124;` or `\|`, line breaks as `<br>`. No source/status/operation/supersedes metadata columns. Do not record standalone `$trellis-init`, `/trellis-*`, temporary commands or questions. Use Git to track history. If a document reference matters, include it naturally in the description.
+
+Functional table: grouped by business category, stable Fxx-xxx IDs, functionality, linked R IDs, acceptance criteria, status (待确认/已确认/已取消). AI-derived items explicitly marked 待确认（AI推导）. Confirm substantive changes with user, retain cancelled IDs. Never let a cancelled raw requirement silently authorize new work; check downstream implications. Keep only necessary acceptance detail; link a separate evaluator when useful. Use `requirements-check` optionally to catch malformed IDs, duplicate entries and missing links. Do not force user to use CLI for edits.
+
+For migrated projects, consult the retired state once when assigning the first new ID: use a number greater than every historical ID, including omitted command-only rows. Preserve the old backup until Git history and references are confirmed.

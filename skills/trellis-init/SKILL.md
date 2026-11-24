@@ -1,26 +1,14 @@
 ---
 name: trellis-init
-description: "Initialize or adopt a project; configure docs, rules, skills, context, Git and CI. 初始化、接管、规范、技能管理、环境配置。"
+description: "Initialize or adopt a project; configure docs, rules, skills, context, Git and CI. 初始化、接管、规范、技能管理、环境配置"
 ---
 
 # trellis-init
 
 <!-- Trellis managed installation -->
 
-This is one of the **eight stable Trellis entry skills**, not a fixed pipeline. Interpret the user's natural-language request and compose only the relevant task routes. Trellis keeps the human in control of goals, approvals and acceptance; upstream skills are private implementation capabilities.
+Toolkit: `@TRELLIS_TOOLKIT@`; interpreter: `@TRELLIS_PYTHON@`. In source checkout use its root and Python 3.9+. Read project instructions and `docs/agent-protocol.md` in toolkit (relevant sections only).
 
-## Start
+Initialize or adopt only requested project assets. Inspect existing docs and AGENTS.md/CLAUDE.md; reuse them. For document initialization create missing Markdown templates (optional `bootstrap`), merge approved rules, avoid empty speculative docs. For existing v0.1 projects propose migration first. For Git/CI/skill/environment requests choose matching capabilities; obtain approval for global or destructive changes.
 
-1. Locate the actual project root and the installed toolkit at `@TRELLIS_TOOLKIT@`. Use the installation interpreter `@TRELLIS_PYTHON@` (or Python 3.9+ in a source checkout), with absolute toolkit paths; pass `--project <absolute-project-root>` before the subcommand. If this file is being read from a source checkout rather than an installation, use the checkout root (contains `VERSION`, `trellis.py`, `registry/`).
-2. **Read `docs/agent-protocol.md` in the toolkit in full.** It defines the authoritative execution, approval, requirement capture, provider adaptation, and evidence rules. Do not proceed if it is missing.
-3. Read applicable project `AGENTS.md` or `CLAUDE.md`, project requirements, current state and relevant approved design; run `catalog init` to list this entry's precise task routes. If useful run `status` and `guard`.
-4. Use the request, context and route descriptions to select one or more routes; call `compose init --route <route-id> ...` to inspect the resulting steps. For another entry's capability, explain the route change and obtain user agreement if it changes the intended operation. Never ask the user to memorize route IDs or upstream skill names.
-5. Capture any newly stated user requirements, regardless of the current entry. Start or resume the workflow and follow the shared protocol. Use the smallest appropriate route; never run every available provider by default.
-
-## Entry-specific behavior
-
-Propose changes to project documentation, instructions, Skills and environment before applying. Preserve existing content. Never overwrite an existing requirement file or install global dependencies without authorization. For the full initialization route, call `bootstrap` only after the initialization gate and merge the managed rule block from `docs/project-rules.md` into applicable project instruction files.
-
-## User-facing output
-
-Use the user’s language. Show the current result, evidence, the exact decision needed (if any), and the next automatic action. Prefer a concise mechanism explanation with source paths and a real example over long progress narration. Never report unrun checks as passed.
+Route semantically from user input. When useful run `<python> <toolkit>/trellis.py catalog init`; examples are hints, not mandatory flows. Select applicable capability families and resolve their actual pinned resources with `deps resolve <key>`. Read selected upstream instructions and provider-specific notes only. Compose the smallest workflow in the host agent; no per-step CLI, state machine or approval token. Consider other entry capabilities internally if required. Record actual new/changed product requirements per `docs/requirements-rules.md`, never command-only input. Report results, evidence and necessary decision in user language.

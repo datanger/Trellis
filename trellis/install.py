@@ -5,7 +5,16 @@ import subprocess
 import tempfile
 from pathlib import Path
 from .registry import ROOT, ENTRIES, TrellisError, validate
-from .engine import atomic
+import os
+
+def atomic(path, text):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(prefix='.'+path.name+'.', dir=path.parent)
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8') as f: f.write(text)
+        os.replace(tmp, path)
+    finally:
+        if os.path.exists(tmp): os.unlink(tmp)
 
 
 def install(host, scope, project, offline=False, replace=False, home=None):
@@ -30,7 +39,7 @@ def install(host, scope, project, offline=False, replace=False, home=None):
     if not toolkit.exists():
         with tempfile.TemporaryDirectory(prefix='.trellis-install-',dir=toolkit.parent) as temp:
             stage=Path(temp)/version; stage.mkdir()
-            for name in ('trellis','registry','skills','docs'):
+            for name in ('trellis','registry','skills','docs','templates'):
                 shutil.copytree(ROOT/name,stage/name,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
             for name in ('trellis.py','VERSION','README.md','README.en.md','LICENSE','NOTICE.md'):
                 if (ROOT/name).exists():shutil.copy2(ROOT/name,stage/name)
